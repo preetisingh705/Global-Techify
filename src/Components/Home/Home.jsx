@@ -114,7 +114,7 @@ viewport={{once: false, amount: 0.5}} >
    viewport={{once: false, amount: 0.8}}
    className=' max-w-[600px] max-h-[600px]
  '>
-      <img src={Logo1} className='w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]'></img>
+      <img src={Logo1} className='w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] hidden sm:flex lg:flex'></img>
   </motion.div>
 
   </div>
