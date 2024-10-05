@@ -9,10 +9,10 @@ import Logo1 from "../../assets/Home/Logo1.png";
 
 
 function Home() {
-  return <section id='home' className=' min-h-[95vh] lg:min-h-[95vh] flex dark:bg-none overflow-hidden' >
+  return <section id='home' className='min-h-[50vh] lg:min-h-[95vh] flex dark:bg-none overflow-hidden bg-zinc-100' >
     {/* <AnimatedBg /> */}
-    <div className='container mx-2 lg:mx-28  mt-6 lg:mt-10'>
-    <div className=' flex lg:flex-end  lg:gap-x-6'>
+    <div className='container mx-2 md:mx-16 lg:mx-20  mt-16 lg:mt-32'>
+    <div className=' flex lg:flex-end md:gap-x-5 lg:gap-x-6'>
 
    {/* data */}
     <div className='mt-6 md:mt-4 lg:mt-4 flex-1 justify-start  font-secondary lg:text-left '>
@@ -57,10 +57,10 @@ whileInView={'show'}
 viewport={{once: false, amount: 0.5}} >
 <p 
     
-    className=" max-w-lg mb-4 text-[25px] lg:text-[30px]    font-bold lg:mx-0 text-black dark:text-white ">
+    className=" max-w-lg mb-4 text-[20px] lg:text-[30px]    font-bold lg:mx-0 text-black dark:text-white ">
       Start Your Career Journey <br />With Us.
  </p>
- <IoArrowForward className='mt-8 lg:mt-12 ml-[-180px] lg:ml-[-220px] text-[40px] lg:text-[45px] text-[#563AE0]' />
+ {/* <IoArrowForward className='mt-8 lg:mt-12 ml-[-180px] lg:ml-[-220px] text-[40px] lg:text-[45px] text-[#563AE0]' /> */}
 
 </motion.div>
    
@@ -112,9 +112,9 @@ viewport={{once: false, amount: 0.5}} >
    initial='hidden'
    whileInView={'show'}
    viewport={{once: false, amount: 0.8}}
-   className=' max-w-[600px] max-h-[600px]
+   className=' max-w-[500px] max-h-[500px]
  '>
-      <img src={Logo1} className='w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] hidden sm:flex lg:flex'></img>
+      <img src={Logo1} className='w-[300px] h-[300px] lg:w-[400px] xl:w-[600px] lg:h-[500px] hidden sm:flex lg:flex'></img>
   </motion.div>
 
   </div>
