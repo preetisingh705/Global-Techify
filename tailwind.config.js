@@ -21,6 +21,8 @@ export default {
       primary: 'Orbitron',
       secondary: 'Rajdhani',
       tertiary: 'Aldrich',
+      Arial: 'Arial',
+      Verdana: 'Verdana'
     },
     container: {
       padding: {
@@ -44,7 +46,10 @@ export default {
     },
   },
     // ...
-  plugins: [],
+  plugins: [
+    require('@nauverse/tailwind-dot-grid-backgrounds')
+
+  ],
 }
 
 

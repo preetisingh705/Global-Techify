@@ -1,44 +1,72 @@
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import React from 'react';
-import NavItem from './NavItem';
-import Button from './Button';
 import Logo from '../../assets/Header/Logo.png'
 import {  Box,Drawer ,List, ListItem} from '@mui/material';
-import { CiMenuKebab } from "react-icons/ci";
 import { FaChevronLeft } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { FaYoutube } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { HiSun } from "react-icons/hi";
+
 import { FaLinkedin } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
+import {Link} from 'react-router-dom';
 
-
-
-
-
-
-const navItems = ['home','Services', 'Courses', 'Events', 'Contact'];
 
 function Header() {
 
-  const [open, setOpen] = useState(false);
+  // change icon
+const [icon,setIcon] = useState(<BsFillMoonStarsFill />)
+const [visible,setVisible] = useState(false)
+const changeIcon = () => {
+  setVisible(!visible);
+  setIcon(visible ? <BsFillMoonStarsFill/> : <HiSun />);
+};
+
+// Open drawer
+const [open, setOpen] = useState(false);
 const handleOpen = ()=>{
 setOpen(true);
-}
+};
 const handleClose = ()=>{
 setOpen(false);
-}
+};
+
+//Dark Mode 
+const [darkMode, setDarkMode] = useState();
+
+useEffect(() => {
+  const theme = localStorage.getItem("theme")
+if( theme === "light") setDarkMode(true)
+},[]);
+
+useEffect(() => {
+ if(darkMode){
+  document.documentElement.classList.add('dark');
+  localStorage.setItem("theme", "light")
+ }else{
+  document.documentElement.classList.remove('dark');
+  localStorage.setItem("theme", "dark")
+ }
+},[darkMode]);
+
+
 
   return (
-    <header className="fixed z-50 flex overflow-hidden flex-wrap   p-2 lg:p-4 w-full leading-none border-b bg-zinc-100 border-zinc-300 font-[number:var(--sds-typography-body-font-weight-regular)] text-[length:var(--sds-typography-body-size-medium)] max-md:px-4">
+    <header className="fixed z-50  overflow-hidden flex p-2 w-full leading-none border-b dark:bg-black bg-zinc-100 border-zinc-300 
+    font-[number:var(--sds-typography-body-font-weight-regular)] text-[length:var(--sds-typography-body-size-medium)] ">
    
     {/* Header */}
-     <div className='flex flex-1 md:grid md:grid-cols-3 lg:flex   '>
+   
+
+     <div className='flex flex-1 justify-start font-Arial'>
+
       {/* Menu Bar Icon */}
-     <div className='mx-1 w-[60px]  flex items-center  justify-start lg:hidden '>
+     <div className=' w-[45px] flex  items-center  justify-start lg:hidden '>
       <div className='border-solid border-2 px-1'>
-        <IoIosMenu className='text-[#563AE0] text-2xl md:text-3xl  lg:hidden ' onClick={handleOpen} />
+        <IoIosMenu className='text-[#563AE0] text-2xl md:text-3xl   ' onClick={handleOpen} />
         </div>
      </div>
 
@@ -46,22 +74,41 @@ setOpen(false);
       <Drawer open={open} onClose={handleClose} >
         <Box className='w-full '>
           <List>
-            <ListItem className='m-2'>
-          <Button variant="secondary" label="Sign in/Login" />
+          <ListItem className='m-2'>
+          <button className='flex m-2 px-4 h-[40px] rounded-3xl items-center bg-[#7862e4]  text-[black] font-serif '>Sign Up/Login</button>    
           <FaChevronLeft className='text-[20px] ml-4  ' onClick={handleClose} />
-
           </ListItem>
           <hr></hr>
 
-          <ListItem className='flex flex-col mx-2'>
-         {navItems.map((item, index) => (
-          <NavItem key={index} label={item} />
-        ))}
-        </ListItem>
+         <ListItem>
+        <button className=' flex font-bold text-xl   hover:none '> All Courses
+           <FaAngleDown className=' mt-2 -rotate-90 text-xl text-[#563AE0]' />
+        </button>
+         </ListItem>
+
+      <ListItem className='flex flex-col mx-2'>
+        <Link to='/courses' className="gap-4 p-2 self-stretch  rounded-lg"> Courses
+        </Link>
+        
+        <Link to='/services' className="gap-2 p-2 self-stretch  rounded-lg"> Services
+        </Link>
+        
+        <Link to='/events' className="gap-2 p-2 self-stretch  rounded-lg"> Events
+        </Link>
+       
+        <Link to='/footer' className="gap-2 p-2 self-stretch  rounded-lg"> Contact
+        </Link>
+       
+        <Link to='/home' className="gap-2 p-2 self-stretch  rounded-lg"> About
+        </Link>
+       
+      </ListItem>
+        
         <ListItem>
           <p>Follow Us On</p>
           <hr></hr>
-          </ListItem>
+        </ListItem>
+
        <ListItem>
             <div 
        className='text-[25px]  lg:mx-0 flex gap-x-4 lg:gap-x-10'>    
@@ -95,46 +142,63 @@ setOpen(false);
         </Box>
       </Drawer>
 
-      {/* Logo and Courses */}
-
-      <div className='flex items-center justify-center p-[5px]  w-[190px] md:w-[300px] lg:w-[310px] lg:border-r-2 border-indigo-300'>
-       <img src={Logo} className='w-[40px] lg:w-[60px] md:w-[50px]  '  />
-       <p className=" w-[200px] text-xl lg:text-3xl  items-center font-bold text-[rgb(86,58,224)] ">Global Techify</p>
+       {/* Logo and Courses */}
+       <Link to='/'>
+      <div className=' flex items-center m-1 justify-center w-[200px] md:w-[200px] lg:w-[300px] md:border-r-2 border-indigo-300'>
+       <img src={Logo} className='w-[40px] lg:w-[60px]  '  />
+       <p className="w-[250px] text-xl lg:text-3xl  items-center font-bold text-[#7862e4] ">Global Techify</p>
        </div>
+       </Link>
+     
 
        {/* Courses Filter Box */}
-       <div className='  hidden lg:flex ml-2 mt-2 h-[45px] w-[150px]  border-solid border-2 border-[#DBDBDC] rounded-lg justify-center'>
-        <button className='bg-zinc-100 w-[150px] font-bold border-none border-[#DBDBDC] text-[#757575] hover:none flex'> All Courses
-           <FaAngleDown className='ml-1 text-xl text-[#563AE0]' />
+       <div className='hidden md:flex ml-2 px-1  border-solid border-2 border-[#DBDBDC] rounded-lg  items-center'>
+        <button className=' flex font-bold border-none border-[#DBDBDC] text-[#535353] dark:text-[#7862e4] hover:none '> All Courses
+           <FaAngleDown className=' text-xl text-[#563AE0]' />
         </button>
        
        </div>
-
-      {/* Dark Mode Icon */}
-      <div className='w-[60px] md:w-56  flex  items-center place-content-end lg:hidden'>
-      <CiMenuKebab className='text-[#563AE0] text-2xl justify-end lg:hidden ' onClick={handleOpen} />
-      </div>
-
      </div>
-   
 
-   {/* Large Mode Navbar */}
-     <div className='lg:flex justify-end'>
-      <nav className=" hidden lg:flex flex-1 shrink gap-2 items-end justify-end self-stretch my-auto whitespace-nowrap basis-0 min-w-[240px] text-[color:var(--sds-color-text-default-default)] max-md:max-w-full">
-        {navItems.map((item, index) => (
-          <NavItem key={index} label={item} />
-        ))}
-        <div className="flex gap-3 items-center self-stretch my-auto w-[178px]">
-        {/* <Button variant="secondary" label="Sign in/Login" /> */}
-        <Button variant="primary" label="Sign in/Login" />
-      
-      </div>
-      </nav>
-      </div>
      
-      
-      
-    
+
+   {/* Large screen Navbar */}
+     <div className='hidden lg:flex justify-end items-center mx-2 font-Verdana font-bold'>
+      <nav className=" flex   text-[#7862e4] dark:text-[#7862e4]  h-[40px] items-center gap-4 xl:gap-8">
+       <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+        <Link to='/courses' > Courses
+        </Link>
+        </div>
+        <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+        <Link to='/services' > Services
+        </Link>
+        </div>
+        <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+        <Link to='/events'> Events
+        </Link>
+        </div>
+        <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+        <Link to='/mentor' > MentorShip
+        </Link>
+        </div>
+        <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+        <Link to='/about'> About
+        </Link>
+        </div>
+        <button className='flex px-1 h-[40px] rounded-3xl items-center border-2 border-solid border-[#7862e4]  text-[#7862e4] font-Arial '>Sign Up/Login</button>      
+
+      </nav>
+
+      </div>
+
+
+       {/* Dark Mode Icon */}
+       <div className='w-[45px] flex  justify-end  items-center'>
+      <button className=' rounded-full border-solid border-[#7862e4] border-2 p-1 text-[#7862e4] text-xl ' onClick={() =>{changeIcon(); setDarkMode(!darkMode);} }>
+        {icon}
+      {/* <BsFillMoonStarsFill className='text-[#7862e4] text-xl ' onClick={handleOpen}/> */}
+      </button>
+      </div>
       
     </header>
   );

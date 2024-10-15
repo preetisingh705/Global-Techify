@@ -16,29 +16,26 @@ const LINKS = [
     title: "Resource",
     items: ["Blog", "Newsletter", "Events", "Help center"],
   },
-//   {
-//     title: "Resource",
-//     items: ["Blog", "Newsletter", "Events", "Help center"],
-//   },
+
 ];
  
 const currentYear = new Date().getFullYear();
  
 function Footer() {
   return (
-    <footer id="contact" className="relative w-full bg-white p-6">
-      <div className="mx-auto w-full max-w-7xl px-6 ">
+    <footer id="contact" className="relative w-full dark:bg-black bg-white p-6">
+      <div className="mx-auto w-full max-w-7xl px-6 font-tertiary ">
         <div className="grid grid-cols-1 justify-between md:grid-cols-2">
         
-          <Typography variant="h5" className="mb-4  lg:w-[500px] ">
+          <Typography variant="h5" className="mb-4  lg:w-[500px] dark:text-white ">
          <div className='flex w-[190px] md:w-[300px] lg:w-[450px] '>
             <img src={Logo} className='w-[40px] lg:w-[60px] md:w-[50px]  '  />
            <p className="w-[200px] text-xl lg:text-3xl  items-center font-bold text-[#563AE0] ">Global Techify</p>
          </div>
             <div className="mt-2">IIT BHU Varansi, Uttar Pradesh , India</div>
             <a href="https://material-tailwind.com/" className="text-[#563AE0] text-xl" >Click here for 24*7 Support</a>
-            <div className="mt-4 "><p className="text-2xl  font-semibold">Call Us</p> <a href="https://material-tailwind.com/" className="text-blue-gray-900">+919651609214</a></div>
-            <div className="text-xl text-blue-gray-900 font-normal"><p className="text-2xl  font-semibold">Gmail</p><a href="https://material-tailwind.com/" className="text-blue-gray-900"><u>global.techify.info@gmail.com</u></a></div>
+            <div className="mt-4 "><p className="text-xl  font-semibold">Call Us</p> <a href="https://material-tailwind.com/" className="text-blue-gray-900">+919651609214</a></div>
+            <div className="text-xl text-blue-gray-900 font-normal"><p className="text-xl  font-semibold">Gmail</p><a href="https://material-tailwind.com/" className="text-blue-gray-900"><u>global.techify.info@gmail.com</u></a></div>
           </Typography>
          
 
@@ -48,7 +45,7 @@ function Footer() {
                 <Typography
                   variant="h5"
                   color="blue-gray-900"
-                  className="mb-3  text-2xl  mt-4 lg:mt-0"
+                  className="mb-3  text-2xl  mt-4 lg:mt-0 dark:text-white"
                 >
                   {title}
                 </Typography>
@@ -59,26 +56,15 @@ function Footer() {
                       href="#"
                       color="blue-gray"
                       variant="h5"
-                      className="py-1 text-2xl font-normal transition-colors text-blue-gray-900 hover:text-blue-gray-900">
+                      className="py-1 text-2xl font-normal transition-colors text-blue-gray-900 hover:text-blue-gray-900 dark:text-white">
                       {link}
                     </Typography>
                   </li>
                 ))}
               </ul>
             ))}
-          </div>
-
-        </div>
-
-        <div className="mt-8 flex w-full flex-col items-center justify-center lg:justify-between border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
-          <Typography
-            variant="small"
-            className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
-          >
-             Copyrights &copy; {currentYear} All Right Reserved <a href="https://material-tailwind.com/">Global Techify</a>
-          </Typography>
-        
-          <div className="flex gap-4 text-[#563AE0] sm:justify-center">
+          <p className="font-bold text-lg lg:text-2xl mt-4 dark:text-white">Follow us on :-</p> 
+          <div className="flex gap-4 text-[#563AE0] mt-4 ">
             <Typography as="a" href="#" className="opacity-80  transition-opacity hover:opacity-100">
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -121,7 +107,20 @@ function Footer() {
               </svg>
             </Typography>
           </div>
+          </div>
+          
         </div>
+
+        <div className="mt-8 flex w-full flex-col items-center justify-center  border-t border-blue-gray-50 py-4 md:flex-row ">
+          <Typography
+            variant="small"
+            className=" text-center  text-sm md:text-xl text-blue-gray-900 dark:text-white"
+          >
+             Copyrights &copy; {currentYear} All Right Reserved <a href="https://material-tailwind.com/">Global Techify</a>
+          </Typography>
+
+        </div>
+
       </div>
     </footer>
   );

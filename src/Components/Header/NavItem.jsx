@@ -2,7 +2,7 @@ import React from 'react';
 
 function NavItem({ label }) {
   return (
-    <a href={`#${label.toLowerCase()}`} className="gap-2 self-stretch p-2 rounded-lg">
+    <a href={`#${label.toUpperCase()}`} className="gap-2 p-2 self-stretch  rounded-lg">
       {label}
     </a>
   );
