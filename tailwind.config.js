@@ -47,9 +47,16 @@ export default {
   },
     // ...
   plugins: [
-    require('@nauverse/tailwind-dot-grid-backgrounds')
+    
 
   ],
+  variants: {
+    extend: {
+      opacity: ['disabled'],
+      bg: ['disabled'],
+      // add any tailwind classes you wish to enable disabled: on here  
+    }
+  },
 }
 
 

@@ -65,7 +65,7 @@ function CenterMode() {
           <p className="text-center ">{d.detail}</p>
           <button className="border-solid border-b-4 border-[#7862e4] text-[#7862e4] text-lg px-1 py-1 ">Read More</button>
         </div>
-       </div>
+         </div>
         ))}
  
       </Slider>

@@ -10,14 +10,15 @@ import About from './Components/About/About';
 import Mentor from './Components/Mentor/Mentor';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
+import DataProvider from "./Context/DataProvider"
+import AllCourses from './Components/Courses/AllCourses';
 
 function App() {
 
   return (
-    <div className="bg-[#F0F0F0] ">
+    <DataProvider>
       <BrowserRouter>
-      <Header/>
-
+      <Header />
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/services' element={<Services/>} />
@@ -25,11 +26,12 @@ function App() {
         <Route path='/events' element={<Events/>} />
         <Route path='/about' element={<About/>} /> 
         <Route path='/mentor' element={<Mentor/>} /> 
-
+        <Route path='/allcourses' element={<AllCourses/>} /> 
         <Route component={Error} /> 
       </Routes>
+      <Footer />
       </BrowserRouter>
-    </div>
+    </DataProvider>
   )
 }
 
