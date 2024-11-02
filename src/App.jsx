@@ -12,6 +12,9 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
 import DataProvider from "./Context/DataProvider"
 import AllCourses from './Components/Courses/AllCourses';
+import AllServices from './Components/Services/AllServices';
+import Contact from './Components/Contact/conatct';
+import Allevents from './Components/Events/Allevents';
 
 function App() {
 
@@ -25,8 +28,11 @@ function App() {
         <Route path='/courses' element={<Courses />} />
         <Route path='/events' element={<Events/>} />
         <Route path='/about' element={<About/>} /> 
+        <Route path='/contact' element={<Contact/>} /> 
         <Route path='/mentor' element={<Mentor/>} /> 
         <Route path='/allcourses' element={<AllCourses/>} /> 
+        <Route path='/allservices' element={<AllServices/>} />
+        <Route path='/allevents' element={<Allevents/>} />
         <Route component={Error} /> 
       </Routes>
       <Footer />

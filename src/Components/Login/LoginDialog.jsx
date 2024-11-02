@@ -80,6 +80,7 @@ const LoginDialog = ({  open, setOpen }) => {
 
     const toggleSignup = () => {
         toggleAccount(accountIntitialValues.signup);
+        
     }
     const toggleLogin = () => {
         toggleAccount(accountIntitialValues.login);
@@ -120,13 +121,23 @@ const LoginDialog = ({  open, setOpen }) => {
 
         <Dialog open={open}  onClose={handleClose} PaperProps={{ sx: {maxWidth: 'unset'}}} >
                 <div className='h-full w-full px-6  '>
-                    <div className='flex justify-center  items-center mt-6  '>
-                        <div className='border-[1px] border-solid border-slate-200 flex  bg-white items-stretch rounded-xl'>
-                        <button   className='px-6 py-2 md:px-10  md:py-4 font-Verdana font-semibold text-xl focus:bg-[#a79cdd] focus:text-white   text-black  rounded-xl' onClick={() => toggleLogin()}>Login</button>
-                        <button  className='px-6 py-2 md:px-10   md:py-4 font-Verdana font-semibold text-xl text-black  focus:text-white rounded-lg active focus:bg-[#a79cdd]' onClick={() => toggleSignup()}>Signup</button>
+                {
+                    account.view === 'login' ?
+                    <div className='flex  flex-col justify-center  items-center mt-6  '>
+
+                        <p className='text-2xl font-bold'>LOGIN </p>
+                        <p className='text-md text-[#9e91e9]'>Welcome To Global Techify</p>
                         </div>
-                        
-                    </div>               
+                    
+                    :
+                    <div className='flex flex-col justify-center  items-center mt-6  '>
+
+                   <p className='text-2xl font-bold'>SIGN UP </p>
+                    <p className='text-md text-[#9e91e9]'>Welcome To Global Techify</p>
+                        </div>
+                } 
+                 
+
                 {
                     account.view === 'login' ?
                 <div className='flex flex-col px-5 py-3 md:px-5 md:py-6 gap-y-5 md:mx-6   '>
@@ -151,7 +162,7 @@ const LoginDialog = ({  open, setOpen }) => {
                     <TextField variant='standard' onChange={(e) => onInputChange(e)} name='email' label="Enter Email"  />
                     <TextField variant='standard' onChange={(e) => onInputChange(e)} name='password' label="Enter Password"  />
                     <TextField variant='standard' onChange={(e) => onInputChange(e)} name='phone' label="Enter Phone"  />
-                    <LoginButton  onClick={() => signupUser()}>Sign up</LoginButton>
+                    <button className='bg-[#a79cdd] text-[#fff] h-[48px] rounded-md' onClick={() => signupUser()}>Sign up</button>
                     <Typography style={{ textAlign: 'center'}}>OR</Typography>
 
                     <CreateAccount onClick={() => toggleLogin()} >Already have an account? Login </CreateAccount>

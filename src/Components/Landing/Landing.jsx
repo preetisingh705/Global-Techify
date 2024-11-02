@@ -6,21 +6,23 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { VscCommentDiscussion } from "react-icons/vsc";
 import { TbFileCertificate } from "react-icons/tb";
 import { PiVideoDuotone } from "react-icons/pi";
-import { FaPlayCircle } from "react-icons/fa";
-import Girl from "../../assets/Services/Learning.png"
-
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaRegFilePdf } from "react-icons/fa";
+import Learn from "../../assets/Home/Home1.jpg"
+import ai from "../../assets/Events/ai.jpg"
+import app from "../../assets/Events/app.jpg"
+import business from "../../assets/Events/business.jpg"
+import "./landing.css";
 
 
 const data = [
-  { id: 1, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/d117a62eb5fbb8e1.jpg?q=50' },
-  { id: 2, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/57267a180af306fe.jpg?q=50' },
-  { id: 3, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/ae9966569097a8b7.jpg?q=50' },
-  { id: 4, url: 'https://rukminim1.flixcart.com/flap/3376/560/image/f6202f13b6f89b03.jpg?q=50' }
+  { id: 1, img: Learn },
+  { id: 2, img: ai  },
+  { id: 3, img: business },
+  { id: 4, img: app }
 ]
 
 const responsive = {
@@ -55,232 +57,191 @@ function Landing() {
       
     };
 
-  return <section id='home' className='min-h-[50vh] lg:min-h-[95vh] p-4 lg:p-10 flex justify-center items-center dark:bg-black overflow-hidden bg-zinc-100' >
+  return (
+    <section id='home' className=' h-[100vh] dark:bg-black overflow-hidden  flex flex-col justify-center items-center ' >
     
-    
-    <div className='w-full grid grid-cols-1 md:grid-cols-2 mt-14 '>
+  {/* <div className=''> */}
+
+   <div  className='font-poppins  main bg-no-repeat bg-cover bg-center bg-fixed  w-full h-full  opacity-[0.8]  grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 p-4  md:p-10 lg:p-10 xl:px-16 xl:pt-16 xl:pb-4 mt-16 ' >
 
    {/* Left Home Page */}
+   <div>
    <motion.div 
-   className='grid grid-cols-1 gap-2 '
+   className='grid grid-cols-1  '
    variants={fadeIn('up',0.5)}
    initial='hidden'
    whileInView={'show'}
    viewport={{once: false, amount: 0.5}} 
    >
 
-   <div 
-    className='flex-1 justify-start  font-Verdana border-l-2 border-[#7862e4] p-4  '>
-     <h1 className=' text-[20px] font-bold  lg:text-[30px] font-Verdana text-black dark:text-white'> 
+   <div className='flex-1 justify-center items-center font-poppins border-l-2 border-[#7862e4] p-2 '>
+     <h1 className=' text-[20px] font-bold md:text-[50px]  text-white dark:text-white'> 
      Welcome To
     </h1>
     
-    <div className=' text-[35px] lg:text-[60px]   font-semibold leading-none  text-[#fa8f52] '>
-    <span className='flex text-[#7862e4] font-Arial'>Global Techify </span> 
+    <div className=' text-[35px] md:text-[45px]  lg:text-[60px]   font-semibold leading-none  text-[#fac17f] '>
+    <span className='flex text-[#f3aa57] '>Global Techify </span> 
     <TypeAnimation
      sequence={[
       'E-Learning !!',
       2000,
       'Mentorship !!',
       2000,
-      'Coding !!',
+      'Events !!',
       2000,
      ]}
      speed={50}
-     className='text-[30px] lg:text-[50px] font-Arial '
+     className='md:text-[50px]  '
      wrapper='span'
      repeat={Infinity}
      />
     </div>  
 
     <p 
-      className="text-[20px] lg:text-[30px]    font-bold text-black dark:text-white ">
-      Start Your Career Journey <br />With Us.
+      className="text-md   font-medium text-black dark:text-white mt-2 ">
+      Unlock your careers by signing up with Global Techify- Learn and Build Carrers.
     </p>
 
-    <div className=' flex  mt-2'>
-    <button className="flex px-4 rounded-3xl items-center border-2 border-[#7862e4] text-[#563AE0] font-bold font-Verdana mr-2">
-      Explore More
+
+    <div className=' flex  mt-2 gap-2  md:gap-4'>
+    <button className="flex px-2 md:px-4 rounded-md items-center  text-[#7b67df] border-[1px] border-solid border-[#7b67df] bg-white font-bold font-Verdana ">
+      Get Started  <IoArrowForwardCircleOutline className='text-[28px] md:[40px] text-[#7862e4] ' />
+
     </button>
-    <IoArrowForwardCircleOutline className='text-[40px] text-[#7862e4] ' />
-     </div>
-
-    </div>
-
-    {/* Video lecture Icons */}
-
-    <div className=' grid grid-cols-3 gap-x-4 justify-center items-center font-Verdana dark:text-white'>
-
-      <div >
-        <div><TbFileCertificate className=' text-[50px] md:text-[60px] text-[#7d68e9]' />  </div>
-        <p className='text-sm md:text-lg font-bold'>Certificate</p>
-        <p className='text-[12px] md:text-[15px]'>Online Autorized Certificates</p>
-      </div>
-  
-      <div>
-        <div className='flex'  >
-        <PiVideoDuotone className='text-[50px] md:text-[60px] text-[#7d68e9]' />
-        </div>
-        <p className='text-sm md:text-lg font-bold'>Live Videos</p>
-        <p className='text-[12px] md:text-[15px]'>Live & Recorded Video lectures</p>
-      </div>
-
-      <div>
-       <div><VscCommentDiscussion className='text-[48px] md:text-[60px] text-[#7d68e9]' />
-       </div>
-        <p className='text-sm md:text-lg font-bold'>Discussion</p>
-        <p className='text-[12px] md:text-[15px]'>Problem & Doubt Solutions</p>
-      </div>
-
-    </div>
-
-
-   </motion.div>
-    
-  {/* Right Home page */}
-
-   <div className='flex flex-col gap-0 font-Arial '>
-
-   <motion.div 
-    variants={fadeIn('up',0.5)}
-    initial='hidden'
-    whileInView={'show'}
-    viewport={{once: false, amount: 0.5}}
-   >
-
-    {/* Full screen Image Section */}
-
-      <motion.div 
-   variants={fadeIn('up',0.5)}
-   initial='hidden'
-   whileInView={'show'}
-   viewport={{once: false, amount: 0.5}}
-   className='h-full w-full relative hidden xl:flex   '>
-
-    <div className='relative flex items-center justify-center  border-solid border-4 dark:border-black bg-[#a9a4ee] z-10 top-10 left-44 right-0  bottom-0  h-[90px] w-[90px] rounded-full '>
-    <p className='font-bold'><h1 className='text-[20px]'>30+</h1>Teachers</p>
-    </div> 
-    <div className=' relative flex items-center justify-center border-solid border-4 dark:border-black bg-[#fcb675] z-10 top-72 lg:left-28 right-0  bottom-0 h-[100px] w-[100px] rounded-full '>
-    <p className='  font-bold '><h1 className='text-[20px]'>80%</h1> Off Now</p>
-    </div> 
-    <div className='relative   bg-[#aea3e7] z-0 xl:top-8 left-4 right-0  bottom-0  h-[330px] w-[330px] rounded-full '>
-    </div> 
-
-       <div className='absolute z-0 top-0  left-56 right-0  h-[350px] w-[300px]  '>
-                <img src={Girl} className='h-full w-full'></img>
-       </div>
-   <div className='relative flex items-center justify-center  border-solid border-4 dark:border-black bg-[#c9bff8] z-0 top-20 -left-10 right-0  bottom-0 h-[90px] w-[90px] rounded-full '>
-    <p className='font-bold'><b className='text-[20px]'>50+</b><br />Courses</p>
-    </div> 
-     </motion.div>
-
-     {/* Large screen Image Section */}
-
-     <motion.div 
-   variants={fadeIn('up',0.5)}
-   initial='hidden'
-   whileInView={'show'}
-   viewport={{once: false, amount: 0.5}}
-   className='h-full w-full relative hidden lg:flex xl:hidden mt-4 '>
-
-    <div className='relative flex items-center justify-center  border-solid border-2 dark:border-black bg-[#a9a4ee] left-32 right-0  bottom-0 z-10  h-[70px] w-[70px]  rounded-full '>
-    <p className='text-[12px] font-bold'><p>30+</p>Teachers</p>
-    </div> 
-    <div className=' relative flex items-center justify-center border-solid border-2 dark:border-black bg-[#fcb675] z-10 top-56 left-24 right-0  bottom-0 h-[70px] w-[70px]  rounded-full '>
-    <p className=' text-[12px] font-bold '><p>80%</p> Off Now</p>
-    </div> 
-    <div className='relative   bg-[#aea3e7] z-0 top-0 left-0 right-0  bottom-0  h-[250px] w-[250px] rounded-full '>
-    </div> 
-
-       <div className='absolute z-0 top-0 left-36 right-0   h-[220px] w-[230px]   '>
-                <img src={Girl} className='h-full w-full'></img>
-       </div>
-     <div className='relative flex items-center justify-center  border-solid border-2 dark:border-black bg-[#c9bff8] z-0 top-14 -left-10 right-0  bottom-0 h-[65px] w-[65px]  rounded-full '>
-    <p className='text-[12px] font-bold'><p>50+</p>Courses</p>
-    </div> 
-      
-
-     </motion.div>
-
-     {/* Medium Screen Image section */}
-     <motion.div 
-   variants={fadeIn('up',0.5)}
-   initial='hidden'
-   whileInView={'show'}
-   viewport={{once: false, amount: 0.5}}
-   className='h-full w-full relative  hidden  md:flex   lg:hidden mt-4   '>
-
-     <div className='relative flex items-center justify-center  border-solid border-2 dark:border-black bg-[#a9a4ee] left-28 right-0  bottom-0 z-10  h-[65px] w-[65px]  rounded-full '>
-    <p className='text-[12px] font-bold'><p>30+</p>Teachers</p>
-    </div> 
-    <div className=' relative flex items-center justify-center border-solid border-2 dark:border-black bg-[#fcb675] z-10 top-40 left-20 right-0  bottom-0 h-[65px] w-[65px]  rounded-full '>
-    <p className=' text-[12px] font-bold '><p>80%</p> Off Now</p></div>
-    <div className='bg-[#aea3e7] z-0 top-8 left-0 right-0  bottom-0  h-[200px] w-[200px] rounded-full '>
-    </div> 
-
-       <div className='absolute z-0 top-0 left-40 right-0   h-[180px] w-[150px]   '>
-                <img src={Girl} className='h-full w-full'></img>
-       </div>
-
-       <div className='relative flex items-center justify-center  border-solid border-2 dark:border-black bg-[#c9bff8] z-0 top-10 -left-6 right-0  bottom-0 h-[60px] w-[60px]  rounded-full '>
-    <p className='text-[12px] font-bold'><p>50+</p>Courses</p>
-    </div>
-
-     </motion.div>
-
-     {/* Enroll Now Button */}
-     
-     <div className=' flex justify-center items-center mt-6 md:mt-2 gap-2 md:gap-4 '>
-     <button className='flex justify-center items-center gap-x-1 lg:ml-10 text-lg lg:text-xl font-bold border-2 border-[#7862e4] border-solid rounded-full text-[#7862e4] px-1 md:px-4 py-1 md:py-3 ' >
-     <FaPlayCircle className='text-[23px] md:text-[25px]' /> Watch Videos</button>
-     <button className=' text-lg lg:text-2xl font-bold text-white rounded-full bg-[#7862e4] px-2 md:px-4 py-1 md:py-3 ' >
+     <button className=' text-lg xl:text-xl font-bold text-white rounded-full bg-[#7862e4] px-2 md:px-4 py-1 md:py-3 ' >
      Enroll now</button>
      </div>
-     
 
-     </motion.div>
+    </div>
 
-     </div>
+   </motion.div>
 
-
-     <div className="w-full  mt-6    md:hidden ">
-      <Carousel
-      responsive={responsive}
-      swipeable={false}
-      draggable={false}
-      infinite={true}
-      autoPlay={true}
-      removeArrowOnDeviceType={["mobile"]}
-      showDots={true}
-      containerClass="carousel-container"
-        itemClass="carousel-item-padding-40-px"
-        autoPlaySpeed={1000}
-      >
-        { 
-          data.map(data => (
-            <img className="w-full h-20"  src={data.url} alt="banner" />
-          ))
-        }
-
-      </Carousel>
-
-      {/* <div className=' '>
-      <Slider {...settings}>
-        {data.map((d) => (
-         <div className=" bg-white ">
-          <img src={d.img} alt="img" className="w-full lg:h-40 h-36 " />
-         </div>
-        ))}
- 
-      </Slider> */}
-      {/* </div> */}
+  
     </div>
     
-  </div>
+  {/* Right Home page */}
+  {/* <div>
+  <div  className='bg-white flex  border-b-2 shadow-lg  font-poppins dark:text-black  rounded-md '>
+     
+     <div 
+    
+      className='border-[#6c6d6e]  border-r-[1px]  border-solid flex flex-col justify-end items-center  ' >
+      <div><TbFileCertificate className=' text-[45px] md:text-[60px] text-[#7d68e9]' />  </div>
+     <p className='text-sm md:text-lg font-bold'>Certificate</p>
+     <p className='text-[12px] md:text-[15px]'>Verified Certificates</p>
+   </div>
 
- 
+<div className='md:border-[#6c6d6e]  md:border-r-[1px]  md:border-solid flex flex-col justify-center items-center '>
+<div className='flex'  >
+<PiVideoDuotone className='text-[50px] md:text-[60px] text-[#7d68e9]' />
+ </div>
+<p className='text-sm md:text-lg font-bold'> Daily Live</p>
+<p className='text-[12px] md:text-[15px]'>Intracvtive Classes</p>
+ </div>
 
-  </section>;
+<div className='border-[#6c6d6e]  border-r-[1px] border-solid flex flex-col justify-center items-center' >
+<div><VscCommentDiscussion className='text-[48px] md:text-[60px] text-[#7d68e9]' />
+</div>
+<p className='text-sm md:text-lg font-bold'> 24 X 7</p>
+<p className='text-[12px] md:text-[15px]'>Doubt Solutions</p>
+</div>
+
+<div className=' flex flex-col justify-center items-center ' >
+<div><FaRegFilePdf className='text-[48px] md:text-[60px] text-[#7d68e9]' />
+</div>
+<p className='text-sm md:text-lg font-bold'> 100 +</p>
+<p className='text-[12px] md:text-[15px]'>Notes & Papers</p>
+</div>
+
+    </div>
+  </div> */}
+
+  {/* <motion.div 
+   variants={fadeIn('up',0.5)}
+   initial='hidden'
+   whileInView={'show'}
+   viewport={{once: false, amount: 0.5}}
+    className='hidden md:flex gap-2 font-poppins lg:justify-center lg:items-center relative'>
+
+      <div className='hidden lg:flex lg:flex-col justify-center items-center text-[#5636f5] dark:text-white absolute bg-white shadow-[#e6d0f1] shadow-lg p-2 rounded-l-md rounded-br-md border-b-2 top-2 xl:top-6 left-0 xl:left-10 '> 
+      <p className='text-[20px] font-semibold '>Online Courses </p>
+      <div className='flex gap-x-1 xl:gap-x-3'>
+      <p className='   text-sm  ' >
+       30+ teacher
+      </p>
+      <div className='  text-sm  ' >
+       300+ videos
+      </div>
+     
+      </div>
+
+      </div>
+
+       <div className='hidden lg:flex lg:flex-col justify-center items-center text-[#5636f5] dark:text-white absolute bg-white shadow-[#e6d0f1] shadow-lg bottom-6  left-20 xl:left-36  p-2  rounded-l-md rounded-br-md border-b-2 '> 
+      <p className='text-xl font-semibold '>Events </p> 
+      <p className='  text-md  ' >
+       6+ Events
+      </p>
+       </div> 
+
+       <div className=' border-4 border-solid border-white rounded-md '>
+    <img src={Learn} className='h-72 w-full rounded-md' />
+    </div>
+
+      <div className='hidden lg:flex lg:flex-col justify-center items-center gap-2 text-[#5636f5] dark:text-white absolute bg-white shadow-[#e6d0f1] shadow-lg right-10 xl:right-24   p-2 rounded-r-md rounded-bl-md border-b-2  '> 
+      <p className='text-xl  font-semibold '>Mentorship </p>    
+     
+     <p className=' text-sm ' >
+       Carrier Guidance
+      </p>
+    </div> 
+
+  
+    
+   </motion.div> */}
+
+
+    </div>
+
+
+    
+  {/* small screen view */}
+
+
+   <div className="w-full  md:hidden mt-3 ">
+     <Carousel
+     responsive={responsive}
+     swipeable={false}
+     draggable={false}
+     infinite={true}
+     autoPlay={true}
+     removeArrowOnDeviceType={["mobile"]}
+     showDots={true}
+     containerClass="carousel-container"
+       itemClass="carousel-item-padding-40-px"
+       autoPlaySpeed={1000}
+     >
+       { 
+         data.map(data => (
+           <img className="w-full h-40"  src={data.img} alt="banner" />
+         ))
+       }
+
+     </Carousel>
+
+    
+   </div>
+
+
+       {/* Video lecture Icons */}
+
+    
+{/* </div> */}
+   
+    
+
+  </section>
+  );
   
 };
 

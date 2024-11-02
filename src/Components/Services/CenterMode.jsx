@@ -12,14 +12,25 @@ function CenterMode() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow:2,
+    slidesToShow:3,
     slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 2500,
     cssEase: "linear",
     responsive: [
+
       {
         breakpoint: 1024,
+        settings:{
+          slidesToShow:2,
+        slidesToScroll: 2,
+        dots: true,
+        infinite: true,
+        
+        }
+      },
+      {
+        breakpoint: 768,
         settings:{
           slidesToShow:2,
         slidesToScroll: 2,
@@ -52,15 +63,15 @@ function CenterMode() {
     ]
   };
   return (
-    <div className="w-5/6  m-auto">
-    <div className="mt-4  ">
+
+    <div className="w-5/6 m-auto ">
       <Slider {...settings}>
         {data.map((d) => (
-         <div className="bg-white p-2 h-[380px] md:h-[400px]  text-black rounded-xl ">
-         <div className="h-48 bg-[#bbb3e4] flex justify-center items-center shadow-b-xl  rounded-xl  ">
-          <img src={d.img} alt="img" className=" w-50 " />
+         <div className="bg-white p-2   text-black rounded-xl ">
+         <div className=" flex justify-center items-center shadow-b-xl  rounded-xl  ">
+          <img src={d.img} alt="img" className="h-40 w-full center rounded-xl " />
          </div>
-        <div className="flex flex-col justify-center items-center gap-4 m-2  font-Verdana">
+        <div className="flex flex-col justify-center items-center gap-2 m-2  font-poppins">
           <p className="text-2xl font-bold">{d.titel}</p>
           <p className="text-center ">{d.detail}</p>
           <button className="border-solid border-b-4 border-[#7862e4] text-[#7862e4] text-lg px-1 py-1 ">Read More</button>
@@ -69,7 +80,7 @@ function CenterMode() {
         ))}
  
       </Slider>
-    </div>
+    
     </div>
   );
 }

@@ -1,21 +1,23 @@
+
+
 import {motion} from 'framer-motion';
 import { fadeIn } from '../Varients';
 import data from './data'
 import { FaHandPointRight } from "react-icons/fa";
 
 
-function Events() {
+function Allevents() {
     return (
     <section id='events' className='p-4 md:p-8  dark:text-white  dark:bg-black overflow-hidden  bg-zinc-100' >
 
       <div className='grid grid-cols-1 mt-4 gap-y-4 font-poppins'>
-      <div className='grid font-poppins justify-center items-center mt-4  '>
+      <div className='grid poppins justify-center items-center mt-10  '>
       <motion.div 
         variants={fadeIn('up',0.4)}
         initial='hidden'
         whileInView={'show'}
         viewport={{once: false, amount: 0.7}}>
-          <p className="text-[25px] md:text-[35px]  text-[#7862e4]  font-semibold leading-none">Our Events</p>
+          <p className="text-[25px] md:text-[35px]  text-[#7862e4]  font-semibold leading-none"> Events</p>
       </motion.div>     
       </div>
 
@@ -64,6 +66,6 @@ function Events() {
 
 
 
-export default Events;
+export default Allevents;
 
 

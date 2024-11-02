@@ -1,9 +1,9 @@
 import { useState ,useEffect,useContext} from 'react';
 import React from 'react';
-import Logo from '../../assets/Header/Logo.png'
+import Logo from '../../assets/Header/logo.svg'
 import {  Box,Drawer ,List, ListItem} from '@mui/material';
 import Navbar from './NavBar';
-import Allcourses from './CoursesFilter';
+import Allcourses from './CouseFilter/CoursesFilter';
 
 import { FaChevronLeft } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
@@ -78,24 +78,92 @@ const openDialog = () => {
     {/* Header */}
    
 
-     <div className='flex flex-1 justify-start font-Arial'>
+     <div className='flex flex-1 justify-start font-poppins'>
 
       {/* Menu Bar Icon */}
      <div className=' w-[45px] flex  items-center  justify-start lg:hidden '>
         <div className='border-solid border-2 px-1'>
-        <IoIosMenu className='text-[#563AE0] text-2xl md:text-3xl   ' onClick={handleOpen} />
+        <IoIosMenu className='text-[#563AE0] text-2xl md:text-3xl' onClick={handleOpen} />
         </div>
         </div>
 
         {/* Drawer */}
+        
       <Drawer open={on} onClose={handleClose} >
+      {
+            account ? 
         <Box className='w-full '>
           <List>
           <ListItem className='m-2'>
-          {
-            account ? <Profile account={account} setAccount={setAccount}/> :
+          <Profile account={account} setAccount={setAccount}/> 
+
+          <FaChevronLeft className='text-[20px] ml-4  ' onClick={handleClose} />
+          </ListItem>
+          <hr></hr>
+
+         <ListItem>
+          
+        <button className=' flex font-bold text-xl   hover:none '> All Courses
+           <FaAngleDown className=' mt-2 -rotate-90 text-xl text-[#563AE0]' />
+        </button>
+         </ListItem>
+
+      <ListItem className='flex flex-col mx-2'>
+        <Link to='/allcourses' className="gap-4 p-2 self-stretch  rounded-lg"> Courses
+        </Link>
+        
+        <Link to='/mentor' className='gap-4 p-2 self-stretch  rounded-lg'> Mentor
+          </Link>
+          
+          <Link to='/mentor' className='gap-4 p-2 self-stretch  rounded-lg'> My Courses
+          </Link>
+          <Link to='/events' className='gap-4 p-2 self-stretch  rounded-lg'> Favourites
+          </Link>
+       
+      </ListItem>
+        
+        <ListItem>
+          <p>Follow Us On</p>
+          <hr></hr>
+        </ListItem>
+
+       <ListItem>
+            <div 
+       className='text-[25px]  lg:mx-0 flex gap-x-4 lg:gap-x-10'>    
+       <div className='bg-icon'>
+        <a href="https://www.linkedin.com/in/preeti-singh-764190258/">
+        <FaYoutube className='text-black dark:text-black' />
+        </a>
+         <span></span>
+        </div>    
+        <div className='bg-icon'>
+        <a href="https://www.linkedin.com/in/preeti-singh-764190258/">
+        <FaLinkedin className='text-black dark:text-black' />
+        </a>
+         <span></span>
+        </div>
+        <div className='bg-icon'>
+        <a href="https://t.me/+917905845454">
+        <FaTelegramPlane  className='text-black dark:text-black ' />
+        </a>
+         <span></span>
+        </div><div className='bg-icon'>
+        <a href="https://x.com/singh_preeti7?t=RV2Of7sbPm1-X0RiQBqipw&s=03">
+        <FaTwitter className='text-black dark:text-black ' />
+        </a>
+         <span></span>
+        </div>
+            </div>
+       </ListItem>
+    
+        </List>
+        </Box>
+        :
+        <Box className='w-full '>
+          <List>
+          <ListItem className='m-2'>
           <button className='flex m-2 px-4 h-[40px] rounded-3xl items-center bg-[#7862e4]  text-[black] font-serif '  onClick={()=> openDialog()}>Sign Up/Login</button>    
-          }
+
           <LoginDialog open={open} setOpen={setOpen} />
 
           <FaChevronLeft className='text-[20px] ml-4  ' onClick={handleClose} />
@@ -110,10 +178,10 @@ const openDialog = () => {
          </ListItem>
 
       <ListItem className='flex flex-col mx-2'>
-        <Link to='/courses' className="gap-4 p-2 self-stretch  rounded-lg"> Courses
+        <Link to='/allcourses' className="gap-4 p-2 self-stretch  rounded-lg"> Courses
         </Link>
         
-        <Link to='/services' className="gap-2 p-2 self-stretch  rounded-lg"> Services
+        <Link to='/allservices' className="gap-2 p-2 self-stretch  rounded-lg"> Services
         </Link>
         
         <Link to='/events' className="gap-2 p-2 self-stretch  rounded-lg"> Events
@@ -123,6 +191,8 @@ const openDialog = () => {
         </Link>
        
         <Link to='/about ' className="gap-2 p-2 self-stretch  rounded-lg"> About
+        </Link>
+        <Link to='/contact ' className="gap-2 p-2 self-stretch  rounded-lg"> Contact
         </Link>
        
       </ListItem>
@@ -163,13 +233,14 @@ const openDialog = () => {
     
         </List>
         </Box>
+      }
       </Drawer>
 
        {/* Logo and Courses */}
        <Link to='/'>
-      <div className=' flex items-center m-1 justify-center w-[200px] md:w-[200px] lg:w-[300px] md:border-r-2 border-indigo-300'>
-       <img src={Logo} className='w-[40px] lg:w-[60px]  '  />
-       <p className="w-[250px] text-xl lg:text-3xl  items-center font-bold text-[#7862e4] ">Global Techify</p>
+      <div className=' flex items-center m-1 justify-center w-[200px] md:w-[200px] lg:w-[200px] xl:w-[280px] md:border-r-2 border-indigo-300'>
+       <img src={Logo} className='w-[40px] lg:w-[40px] xl:w-[60px]  '  />
+       <p className="w-[250px] text-xl lg:text-[22px] xl:text-3xl   font-bold text-[#7862e4] ">Global Techify</p>
        </div>
        </Link>
      

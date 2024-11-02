@@ -32,7 +32,8 @@ const Profile = ({ account, setAccount }) => {
     return(
         <>
         <Box onClick={handleClick}>
-          <Typography style={{marginTop: 2, cursor:'pointer' }} className="flex border-2 border-solid border-[#7862e4] px-2 py-1 rounded-full gap-x-2"><CgProfile className="text-[20px]"/>
+          <Typography style={{marginTop: 2, cursor:'pointer' }} className="flex border-2 border-solid border-[#7862e4] px-2 py-1 rounded-full gap-x-2">
+            <CgProfile className="text-[20px]"/>
               <div>{account}</div></Typography>
           </Box>
           <Component

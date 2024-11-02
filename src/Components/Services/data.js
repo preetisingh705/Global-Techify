@@ -1,34 +1,25 @@
 const data = [
     {
-      img:`../../src/assets/Services/Learning.png`,
-      titel:`E-learning`,
-      detail:`E-learning, or online learning, is a modern form of education`,
+      img:`../../src/assets/Services/E-learn.jpg`,
+      titel:`Web Designing`,
+      detail:`10+ Web Desinging Courses And Mentor to Build Projects`,
     },
     {
-      img:`../../src/assets/Services/Mentoship.png`,
-      titel:`Mentorshop`,
-      detail:`E-learning, or online learning, is a modern form of education `,
+      img:`../../src/assets/Services/Mentor.jpg`,
+      titel:`Mentorship`,
+      detail:`Carrer Guidance Session with Our Top Companies Mentors `,
     },
     {
-      img:`../../src/assets/Services/Learning.png`,
-      titel:`Student Help`,
-      detail:`E-learning, or online learning, is a modern form of education`,
+      img:`../../src/assets/Events/business.jpg`,
+      titel:`Business Plan`,
+      detail:`Provide The best & New Business Plans to the Users`,
     },
     {
-      img:`../../src/assets/Services/Learning.png`,
-      titel:`Career Guidence`,
-      detail:`E-learning, or online learning, is a modern form of education `,
+      img:`../../src/assets/Events/app.jpg`,
+      titel:`App Design`,
+      detail:`Orangise Events to guide the sutudent for App Design `,
     },
-    {
-      img:`../../src/assets/Services/Learning.png`,
-      titel:`Web Projet`,
-      detail:`E-learning, or online learning, is a modern form of education `,
-    },
-    {
-      img:`../../src/assets/Services/Learning.png`,
-      titel:`Sponsardhip`,
-      detail:`E-learning, or online learning, is a modern form of education `,
-    }
+   
   ]
 
   export default data;

@@ -1,8 +1,13 @@
 import { useEffect } from "react";
 import { getCourses} from '../../redux/action/coursesAction.js'
 import { useDispatch, useSelector } from 'react-redux';
+import { Box, Typography, styled, Divider } from '@mui/material';
 
-function Card () {
+
+
+
+
+function Card ({title}) {
     const { courses } = useSelector(state => state.getCourses);
 
     const dispatch = useDispatch();
@@ -12,7 +17,13 @@ function Card () {
     },[dispatch])
 
     return (
-        < div className='grid  grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-x-16 '>
+      <div>
+      <div className="p-2 md:p-4 font-poppins ">
+      <p className="text-xl md:text-3xl font-bold ">{title}</p>
+      </div>
+      <Divider />
+
+        < div className='grid  grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-x-10 mt-1 font-poppins'>
 
         {/* Courses Card */}
       {courses.map( (d) => (
@@ -38,11 +49,11 @@ function Card () {
 
            </div>
        </div>
-      </div>
+        </div>
 
        ))}
-      </div>
-
+        </div>
+        </div>
     )
 }
 
