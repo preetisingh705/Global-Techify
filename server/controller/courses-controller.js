@@ -2,7 +2,7 @@
 
 import Courses from "../model/courses-schema.js";
 
-export const getCourses = async(request, response) => {
+export const getProducts = async(request, response) => {
   try {
     const courses = await Courses.find({});
 
@@ -13,7 +13,7 @@ export const getCourses = async(request, response) => {
   }
 }
 
-export const getCoursesById = async(request, response) => {
+export const getProductById = async(request, response) => {
   try {
     const id = request.params.id;
     const courses = await Courses.findOne({ 'id': id})
@@ -23,3 +23,16 @@ export const getCoursesById = async(request, response) => {
     response.status(500).json({message: error.message})
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

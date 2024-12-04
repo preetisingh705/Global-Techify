@@ -11,13 +11,15 @@ try{
 
 }
 
-export const authenticateLogin = async (data) => {
-    try{
-        return await axios.post(`${URL}/login`, data);
-    } catch (error) {
-      console.log('Error while calling login api', error);
-      return error.response;
-    }
-    
-    }
+
+
+    export const authenticateLogin = async (data) => {
+      try{
+          return await axios.post(`${URL}/login`, data);
+      } catch (error) {
+        console.log('Error while calling login api', error);
+        return error.response;
+      }
+      
+      }
 

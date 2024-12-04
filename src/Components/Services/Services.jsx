@@ -2,44 +2,38 @@ import {motion} from 'framer-motion';
 import { fadeIn } from '../Varients';
 import CenterMode from './CenterMode';
 import { IoArrowForward } from "react-icons/io5";
-
+import {Link} from "react-router-dom"
 
 function Services () {
   return(
-    <section id='services' className=' dark:bg-black overflow-hidden bg-zinc-100' >
+    <section id='services' className='p-4 md:px-10 md:py-12 dark:bg-black overflow-hidden ' >
 
-      <div className='grid grid-cols-1 gap-y-4 justify-center items-center font-poppins'>
+      <div className='grid grid-cols-1 gap-y-14 justify-center items-center font-poppins'>
         
         {/* Services Text */}
-      <motion.div 
-        variants={fadeIn('up',0.4)}
-        initial='hidden'
-        whileInView={'show'}
-        viewport={{once: false, amount: 0.7}}
-        className=' flex flex-col  justify-center items-center text-[25px] md:text-[35px] mt-8   text-[#7862e4]  font-semibold '>
-         Our Services
-      </motion.div>
+      <div className=' flex flex-col  justify-center items-center text-[25px] md:text-[35px]   text-[#7862e4] 
+         font-semibold '>
+         What We Do
+      </div>
       
-      <motion.div
-       variants={fadeIn('up',0.4)}
-       initial='hidden'
-       whileInView={'show'}
-       viewport={{once: false, amount: 0.7}}
-       className='text-center text-sm md:text-lg mx-4 md:mx-20 xl:mx-40 flex justify-around items-baseline '>
+      <div className='text-center text-sm md:text-lg mx-4 md:mx-20 xl:mx-40 flex justify-around items-baseline dark:text-white'>
         Global Techify Provide the Online Courses Of there Best Top Teachers  & Mentorship Program To Guidance To the Students . Oraganizing Events On the New Techonology.
-        </motion.div>
+        </div>
 
      {/* Slider */}
-      <div className='mt-4 md:mt-8'>
        <CenterMode />
        
-      </div>
 
       {/* Know More button */}
-      <div className='flex  mt-10 justify-center items-center text-[25px]  lg:text-[30px] text-[#7862e4] font-poppins  font-semibold '>
-      <button className='flex'> View more <IoArrowForward className='m-2 text-[20px]  lg:text-[35px] text-[#7862e4]' /> 
-      </button>  
+      <div className='flex justify-center'>
+      <Link to="/allservices">
+      
+      <button className='flex justify-center items-center text-xl md:text-2xl  text-[#7862e4] 
+      font-poppins gap-x-2 border border-[#7862e4] px-2 rounded-md hover:bg-[#7862e4] hover:text-white'> Know More <IoArrowForward className=' text-[20px] ' /> 
+      </button> 
+      </Link> 
       </div>
+     
      
 
     </div> 

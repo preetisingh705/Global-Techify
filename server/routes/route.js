@@ -1,7 +1,7 @@
 import express from 'express';
 
 import { userSignup, userLogin } from '../controller/user-controller.js';
-import { getCourses , getCoursesById} from '../controller/courses-controller.js';
+import { getProducts , getProductById} from '../controller/courses-controller.js';
 
 
 const router = express.Router();
@@ -10,8 +10,8 @@ const router = express.Router();
 router.post('/signup', userSignup);
 router.post('/login', userLogin);
 
-router.get('/courses', getCourses);
-router.get('/courses/:id', getCoursesById);
+router.get('/products', getProducts);
+router.get('/product/:id', getProductById);
 
 
 

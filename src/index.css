@@ -2,26 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.slick-slide >div {
-  margin: 0 40px;
+
+
+
+
+.slick-slide> div {
+  margin: 0 80px;
 }
 
-.slick-arrow::before {
-  color: #563AE0;
-  font-size: 45px;
-}
 
 
 
 
-@media only screen  and (max-width:768px){
-  .slick-slide >div {
-    margin: 0 25px;
-  }
-}
 
-@media only screen  and (max-width:600px){
-  .slick-slide >div {
-    margin: 0 5px;
-  }
-}

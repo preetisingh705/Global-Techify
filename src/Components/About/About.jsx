@@ -1,42 +1,42 @@
-import {motion} from 'framer-motion';
-import { fadeIn } from '../Varients';
-import img from "../../assets/About/image.png"
-import img1 from "../../assets/About/image1.png"
+import { IoArrowForward } from "react-icons/io5";
+
+import about1 from "../../assets/About/about3.gif";
+import {Link } from "react-scroll";
+
+import { useState,useContext } from 'react';
+import LoginDialog from '../Login/LoginDialog';
 
 function About() {
+  const [open, setOpen] = useState(false);
+
+  
+  const openDialog = () => {
+      setOpen(true);
+  }
     return (
-    <section  className=' p-4 md:p-8 dark:bg-black overflow-hidden  bg-zinc-100 dark:text-white' >
+    <section id='about'  style={{backgroundImage:`url("../../src/assets/Home/background.png")`}}
+    className='bg-no-repeat bg-cover h-full px-4 py-6 md:px-10 md:py-16 lg:px-4  dark:bg-black overflow-hidden  dark:text-white' >
 
-      <div className='grid grid-cols-1  gap-y-6 mt-4  font-poppins'>
-        {/* Events Name */}
-      <motion.div
-       variants={fadeIn('up',0.4)}
-       initial='hidden'
-       whileInView={'show'}
-       viewport={{once: false, amount: 0.7}} 
-      className='grid  mt-4 lg:mt-6 justify-center items-center '>
-          <p className="text-[25px] md:text-[35px] text-[#7862e4]  font-semibold leading-none">What We Are?</p>
-      </motion.div>
-
-
-
-        <div className="grid grid-col-1 xl:grid-cols-2 gap-x-4 gap-y-4  lg:p-8">
-
-        <div className='grid grid-cols-2 gap-x-2'>
-         <div className='border-b-2  shadow-md ' > 
-          <img src={img} alt="" className='h-full w-full ' />
-         </div>
-         <div  className='border-b-2  shadow-md '> 
-          <img src={img1} alt="" className='h-full w-full' />
-         </div>
-        </div>
-
-      <div className='lg:p-4 flex flex-col gap-y-8'>
-
-        <p className="">Global Techify virtual E-Learning platform to upskills the coding and programming journey of Students. We pride on our Teacher and Mentors to teaching  the stuents in a new method and their determination to Stand By students to help in upskilling </p>
-         <p className='text-xl font-semibold text-center text-[#7862e4]'>Our aim to provide accessible & affordable courses to everybody who exticed to Learn it.</p>
+      <div className='grid grid-cols-1 lg:gap-y-4   font-poppins'>
       
-      <div className='flex gap-x-4'>
+          <p className="text-[25px] md:text-[35px] text-[#7862e4] text-center font-semibold leading-none">What We Are</p>
+
+      <div className="flex flex-col-reverse lg:grid md:grid-col-1 lg:grid-cols-[55%_45%] p-4  gap-y-4 ">  
+
+      <div className='flex flex-col gap-y-8 justify-center'>
+
+      <div className=' flex flex-col gap-y-2 justify-center font-poppins'>
+         <p className='text-lg   text-[#7862e4]'>
+          Our aim to provide accessible & affordable courses .
+          </p>   
+         <p className="text-lg md:text-xl ">
+          Global Techify virtual E-Learning platform to upskills the coding and programming journey of Students.
+         We pride on our Teacher and Mentors to teaching  the stuents in a new method and their determination 
+         to Stand By students to help in upskilling 
+         </p>
+    </div>
+       
+      <div className='flex gap-x-4 md:px-5'>
 
         <div className='flex flex-col'>
         <p className='text-md font-semibold text-[#7862e4]'>Teachers 30+</p>
@@ -56,17 +56,29 @@ function About() {
           <p className='text-md font-semibold text-[#7862e4]'>Mentors 25+</p>
         <p>Top Companies Mentors</p></div>
       </div>
-      
+
       <div className='flex gap-x-8 justify-center'>
-      <button className='text-lg p-3 rounded-md border-2 border-solid border-[#7862e4] text-[#7862e4]'>
-       Explore Us
+        <Link to="courses" activeClass='active' smooth={true} spy={true}  offset={-80}>
+      <button className='text-md md:text-lg p-3 rounded-md border-2 border-solid border-[#7862e4] hover:bg-[#7862e4]
+       hover:text-white text-[#7862e4] flex items-center gap-x-1'>
+       Explore Us <IoArrowForward className="text-md md:text-lg"/>
       </button>
-     <button className='text-md bg-[#7862e4] p-4 rounded-md text-white font-semibold'>
+      </Link>
+
+     <button className='text-lg bg-[#7862e4] hover:border hover:border-[#7862e4]  hover:bg-white 
+     hover:text-[#7862e4] p-4 font-poppins rounded-md text-white font-semibold' onClick={()=> openDialog()}>
       Join Us
       </button>
+      <LoginDialog open={open} setOpen={setOpen} />
+
+      </div>
+
       </div>
       
-      </div>
+
+      <div className='' > 
+          <img src={about1} alt="" className='h-full w-full rounded-md ' />
+    </div>
 
       </div>
 

@@ -10,7 +10,7 @@ function Home() {
  
 
   return (
-    <>
+    <div className="">
     <Landing />
     <Courses  />
     <Mentor />
@@ -18,7 +18,7 @@ function Home() {
     <Services />
     <About />
     <Contact />
-    </>
+    </div>
   )
 }
 

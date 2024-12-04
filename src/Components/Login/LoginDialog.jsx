@@ -5,7 +5,7 @@ import  { Dialog, TextField, Typography, Button , styled} from '@mui/material';
 
 import { authenticateSignup,authenticateLogin } from '../../services/api';
 import { DataContext } from '../../Context/DataProvider';
-
+import { RxCross2 } from "react-icons/rx";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Text = styled(Typography)`
 font-size:12px;
 color: #878787;
-`
+`;
 
 const CreateAccount = styled(Typography)`
 font-size:  14px;
@@ -21,14 +21,14 @@ text-align: center;
 color: #2874f0;
 font-weight: 600;
 cursor: pointer;
-`
+`;
 const Error = styled(Typography)`
 font-size:  10px;
 color: #ff6161;
 line-height: 0;
 margin-top: 10px;
 font-weight: 600;
-`
+`;
 
 const accountIntitialValues = {
     login: {
@@ -102,39 +102,48 @@ const LoginDialog = ({  open, setOpen }) => {
     setLogin({ ...login, [e.target.name]: e.target.value });
  }
 
- const loginUser = async () => {
+
+  const loginUser = async () => {
     let response = await authenticateLogin(login);
     console.log(response);
     if(response.status === 200){
       handleClose();
       setAccount(response.data.data.firstname);
-      notify();
     }else {
    setError(true);
     }
- } ;
+ } 
 
 
     
     return (
-        <>
 
         <Dialog open={open}  onClose={handleClose} PaperProps={{ sx: {maxWidth: 'unset'}}} >
+
                 <div className='h-full w-full px-6  '>
                 {
                     account.view === 'login' ?
-                    <div className='flex  flex-col justify-center  items-center mt-6  '>
-
+                    <div className='flex flex-col mt-4'>
+                        <div className='flex flex-col justify-end items-end '>
+                            <div className='border-2 rounded-full p-1 w-8 border-black cursor-pointer' onClick={handleClose} ><RxCross2 className='text-[20px]' /></div>
+                        </div>
+                    <div className='flex font-poppins flex-col justify-center  items-center mt-2  '>
                         <p className='text-2xl font-bold'>LOGIN </p>
                         <p className='text-md text-[#9e91e9]'>Welcome To Global Techify</p>
-                        </div>
+                    </div>
+                    </div>
                     
                     :
-                    <div className='flex flex-col justify-center  items-center mt-6  '>
+                    <div className='flex flex-col mt-2'>
+                        <div className='flex flex-col justify-end items-end '>
+                            <div className='border-2 rounded-full p-1 w-8 border-black cursor-pointer' onClick={handleClose} ><RxCross2 className='text-[20px]' /></div>
+                        </div>
+                    <div className='flex flex-col justify-center  items-center   '>
 
                    <p className='text-2xl font-bold'>SIGN UP </p>
                     <p className='text-md text-[#9e91e9]'>Welcome To Global Techify</p>
-                        </div>
+                    </div>
+                    </div>
                 } 
                  
 
@@ -172,7 +181,6 @@ const LoginDialog = ({  open, setOpen }) => {
                  } 
             </div>
         </Dialog>
-    </>
 
     )
 }

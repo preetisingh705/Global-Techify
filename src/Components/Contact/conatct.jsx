@@ -3,7 +3,7 @@ import { fadeIn } from '../Varients';
 import { FaLocationDot } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
-import cont from "../../assets/contact/contact.png"
+import cont from "../../assets/contact/contact2.png"
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -13,88 +13,97 @@ import { FaGithubSquare } from "react-icons/fa";
 
 function Contact() {
     return (
-    <section  className=' p-4 md:p-8 lg:p-4 dark:bg-black overflow-hidden   bg-zinc-100 pb-8' >
+    <section id='contact' className=' px-4   dark:bg-black overflow-hidden py-10' >
 
-    <div className='grid grid-cols-1 gap-y-4 md:gap-y-16  font-poppins'>
+        <div  className='mt-4  flex justify-center items-center'>
+        <p className="text-[25px] md:text-[40px] text-[#7862e4]  font-semibold leading-none">Contact Us</p>
+    </div>
 
-      {/* Events Name */}
-    <motion.div
-     variants={fadeIn('up',0.4)}
-     initial='hidden'
-     whileInView={'show'}
-     viewport={{once: false, amount: 0.7}} 
-    className='grid  mt-4 lg:mt-6 justify-center items-center '>
-        <p className="text-[25px] md:text-[35px] text-[#7862e4]  font-semibold leading-none">Get In Touch</p>
-    </motion.div>
+      <div className='text-md md:text-lg font-poppins dark:text-white flex justify-center items-center p-4 lg:px-40 mt-2 md:mt-6 text-center'><p>
+        Got any questions about courses or mentorship program ? 
+        We're here to help. Chat to our friendly team available 24X7 and get onboard in less than 5 mintues .</p>
+        </div>
 
-    <div className="flex flex-col-reverse xl:flex-row gap-x-4 gap-y-4 justify-center items-center">
+  
+          <div className="grid grid-cols-1 lg:grid-cols-2  justify-center items-center  ">
+        <div className='flex justify-center items-center  '>
+          <img src={cont} className='w-[80%] ' />
+        </div>
 
-        <div className='flex flex-col justify-center items-center gap-4'>
-        <p className='text-2xl md:text-4xl font-bold dark:text-white'> Have a Questions? </p>
-        
-        <div className='bg-white p-4 lg:px-10 flex flex-col justify-center items-center gap-4 rounded-md shadow-lg'>
-          <p className='text-2xl font-bold text-[#7862e4]'>Send Quaries</p>
-          <form className='flex flex-col gap-y-4 '>
+        <div className='flex flex-col gap-y-6'>
+          
+        <div className=' p-4 bg-white dark:bg-neutral-900 border dark:border-neutral-400 dark:text-white 
+         w-full flex flex-col   gap-4 rounded-md shadow-lg'>
+          <p className='text-2xl font-poppins text-[#7862e4]'>Subscribe Now</p>
+
+          <form className='flex flex-col  gap-y-2 font-poppins '>
             <div className='flex flex-col gap-2 w-full'> 
-              <label>Your Name</label>
-            <input placeholder='Enter Your Name' className='p-3 rounded-md border-[1px] border-solid border-black'/>
+            <input placeholder='Enter Your Email' className='p-2 rounded-md border-[1px] border-solid
+             dark:bg-neutral-900 dark:border-neutral-400 placeholder:black dark:placeholder-white'/>
             </div>
-            <div className='flex flex-col gap-2 w-full'> 
-              <label>Your Email</label>
-            <input placeholder='Enter Your Email' className='p-3 rounded-md border-[1px] border-solid border-black'/>
+            <div className='flex justify-center items-center'>
+            <button className='py-2  px-6 rounded-lg bg-[#9383e0] text-xl text-white hover:text-[#9383e0] 
+            hover:bg-white hover:border-[#9383e0] hover:border'>Subscribe</button>
             </div>
-            <div className='flex flex-col gap-2'> 
-              <label>Your Queries</label>
-            <textarea cols={3} placeholder='Enter Your Name' className='p-3 rounded-md border-[1px] border-solid border-black'/>
-            </div>
-            <button className='p-3 rounded-md bg-[#9383e0] text-lg text-white'>Send</button>
           </form>
-        </div>
-
+          
          </div>
+         
 
+           <div className='grid grid-cols-1 md:grid-cols-3 p-2 bg-[#F4F3FF] dark:bg-neutral-800 rounded-md shadow-md    justify-center  '>
+           <div className='  flex flex-col gap-y-1 hover:scale-105  '>
+           <p className='text-black text-xl font-poppins text-center dark:text-white'>Visit Us</p>
+           <div className='flex flex-col  justify-center items-center '>
+            
+           <div className='p-3 bg-white dark:bg-neutral-900 border dark:border-neutral-400 rounded-full 
+           justify-center items-center'>
+              <FaLocationDot className='text-2xl text-[#7862e4]'/>
+               </div>
 
-      <div className='flex flex-col p-4 gap-y-4 justify-center items-center'>
-        <div className='w-60 md:w-80 flex justify-center items-center '>
-          <img src={cont} className='h-full w-full ' />
+                <div >
+          <p className='text-xl text-bold text-[#7862e4] text-center'>Location</p>
+               <p className=' dark:text-white text-center'>Uttar Pradesh,India</p>
+           </div>
+             </div>
+
+             </div>
+
+          <div  className='  flex flex-col gap-y-1 hover:scale-105'>
+            <p className='text-xl font-poppins text-center dark:text-white'>Call Us</p>
+           <div className='flex flex-col  justify-center items-center '>
+        <div className='p-3 bg-white dark:bg-neutral-900 border dark:border-neutral-400 rounded-full'>
+        <IoCall className='text-2xl text-[#7862e4]' />
+           </div>
+           <div>
+          <p className='text-xl text-bold text-[#7862e4] text-center'>Phone</p>
+        <p className='dark:text-white text-center'>+919651609214</p>
         </div>
-
-        <div className='flex flex-col md:flex-row  gap-y-4 gap-x-4 '>
-          <div className='flex flex-col justify-center items-center p-4 lg:p-6 shadow-lg bg-white rounded-md gap-y-1 '>
-            <FaLocationDot className='text-4xl'/>
-            <p className='text-xl text-bold text-[#7862e4]'>Address</p>
-            <p className='text-center'>Ballia</p>
-            <p className='text-center'>Uttar Pradesh,India</p>
+          </div>
           </div>
 
-          <div className='flex flex-col justify-center items-center p-4 lg:p-6 shadow-md bg-white rounded-md gap-y-1'>
-            <IoCall className='text-4xl' />
-          <p className='text-xl text-bold text-[#7862e4]'>Phone</p>
-            <p>+919651609214</p>
+          <div className=' flex flex-col gap-y-1 hover:scale-105'>
+            <p className='text-xl text-center font-poppins dark:text-white'>Send Email</p>
+           <div className='flex flex-col justify-center items-center  '>
+            <div className='p-3 bg-white dark:bg-neutral-900 border dark:border-neutral-400 rounded-full'>
+          <MdEmail className='text-3xl text-[#7862e4]'/> 
           </div>
-          <div className='flex flex-col justify-center items-center p-4 lg:p-6 shadow-md bg-white rounded-md gap-y-1'>
-            <MdEmail className='text-4xl'/> 
-          <p className='text-xl text-bold text-[#7862e4]'>Email</p>
-            <p>global.techify.info@gmail.com</p>
-          </div>
-        </div>
+          <div>
+        <p className='text-xl text-bold text-[#7862e4] text-center'>Email</p>
+         <p className='dark:text-white text-center '>global.techify.info@gmail.com</p>
+           </div>
+           </div>
+           </div>
 
-        <div className='flex flex-col gap-y-4'>
-          <p className='text-xl md:text-2xl font-semibold dark:text-white'> Other Mehtods To Connect With Us.</p>
-          <div className='flex gap-x-4 justify-center items-center'>
-            <FaLinkedin  className='text-4xl text-[#8471e2]'/>
-            <FaInstagramSquare  className='text-4xl text-[#8471e2]' />
-            <FaFacebookSquare  className='text-4xl text-[#8471e2]' />
-            <BsThreadsFill  className='text-4xl text-[#8471e2]' />
-            <FaGithubSquare  className='text-4xl text-[#8471e2]' />
-          </div>
-        </div>
+           </div>
+           </div> 
 
-      </div>
+          
 
+         
     </div>
 
-    </div>
+
+      
     </section>
     )
 

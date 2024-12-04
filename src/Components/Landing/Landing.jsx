@@ -2,24 +2,26 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import { fadeIn } from '../Varients';
 import {TypeAnimation} from 'react-type-animation';
-import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import { VscCommentDiscussion } from "react-icons/vsc";
-import { TbFileCertificate } from "react-icons/tb";
 import { PiVideoDuotone } from "react-icons/pi";
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaRegFilePdf } from "react-icons/fa";
-import Learn from "../../assets/Home/Home1.jpg"
+import Learn from "../../assets/Home/Html1.png"
 import ai from "../../assets/Events/ai.jpg"
 import app from "../../assets/Events/app.jpg"
-import business from "../../assets/Events/business.jpg"
+import business from "../../assets/Events/business.jpg";
+import { MdEmojiEvents } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa6";
+import { TbFileCertificate } from "react-icons/tb";
+import { SiCodementor } from "react-icons/si";
 import "./landing.css";
+import { Link } from 'react-scroll';
 
+import { useState } from 'react';
+import LoginDialog from '../Login/LoginDialog';
 
 const data = [
-  { id: 1, img: Learn },
   { id: 2, img: ai  },
   { id: 3, img: business },
   { id: 4, img: app }
@@ -43,7 +45,12 @@ const responsive = {
 
 
 function Landing() {
+  const [open, setOpen] = useState(false);
 
+  
+  const openDialog = () => {
+      setOpen(true);
+  }
     const settings = {
       dots: true,
       infinite: true,
@@ -58,157 +65,98 @@ function Landing() {
     };
 
   return (
-    <section id='home' className=' h-[100vh] dark:bg-black overflow-hidden  flex flex-col justify-center items-center ' >
+    <section id='home' 
+     className=' dark:bg-black overflow-hidden bg-[#FFFFFF]  lg:pt-8 mt-10 lg:mt-0' >
+        
+        
+     <div  style={{backgroundImage:`url("../../src/assets/Home/back2.png")`}} 
+     className='font-poppins bg-no-repeat bg-cover   grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-y-4 mt-3 ' >
+
+
+
+      {/* image */}
+     <div className='flex  md:justify-center lg:p-4 xl:pl-12 xl:mb-4'>
+  		
+      <div class="flex flex-col justify-center items-center">
+      <img src={Learn } className='' />
+	   	</div>
     
-  {/* <div className=''> */}
+       </div>
 
-   <div  className='font-poppins  main bg-no-repeat bg-cover bg-center bg-fixed  w-full h-full  opacity-[0.8]  grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 p-4  md:p-10 lg:p-10 xl:px-16 xl:pt-16 xl:pb-4 mt-16 ' >
+       <div className='flex flex-col gap-y-2 px-4 md:p-1  lg:gap-y-4 justify-center items-center md:items-start '>
+      
 
-   {/* Left Home Page */}
-   <div>
-   <motion.div 
-   className='grid grid-cols-1  '
-   variants={fadeIn('up',0.5)}
-   initial='hidden'
-   whileInView={'show'}
-   viewport={{once: false, amount: 0.5}} 
-   >
+           <div className='flex flex-col justify-center  font-poppins gap-y-2 lg:gap-y-6 '>
+         
+         <h1 className='text-lg md:text-xl  text-black dark:text-white'> 
+       Exproling The Technology World With
+      </h1>
+ 
+           <div className='flex flex-col gap-y-2 text-[25px] md:text-[35px] lg:text-[40px]   font-poppins leading-none  text-[#7b67df]'>
+ <span className='flex text-[#7b67df] text-[35px] md:text-[42px] lg:text-[55px]  xl:text-[60px] font-bold '>Global Techify </span> 
+ <TypeAnimation
+  sequence={[
+   'E-Learning !!',
+   2000,
+   'Mentorship !!',
+   2000,
+   'Events !!',
+   2000,
+  ]}
+  speed={50}
+  className='  '
+  wrapper='span'
+  repeat={Infinity}
+  />
 
-   <div className='flex-1 justify-center items-center font-poppins border-l-2 border-[#7862e4] p-2 '>
-     <h1 className=' text-[20px] font-bold md:text-[50px]  text-white dark:text-white'> 
-     Welcome To
-    </h1>
-    
-    <div className=' text-[35px] md:text-[45px]  lg:text-[60px]   font-semibold leading-none  text-[#fac17f] '>
-    <span className='flex text-[#f3aa57] '>Global Techify </span> 
-    <TypeAnimation
-     sequence={[
-      'E-Learning !!',
-      2000,
-      'Mentorship !!',
-      2000,
-      'Events !!',
-      2000,
-     ]}
-     speed={50}
-     className='md:text-[50px]  '
-     wrapper='span'
-     repeat={Infinity}
-     />
-    </div>  
+         </div>  
 
-    <p 
-      className="text-md   font-medium text-black dark:text-white mt-2 ">
-      Unlock your careers by signing up with Global Techify- Learn and Build Carrers.
-    </p>
+        <p  className="text-md   font-medium text-black dark:text-white  ">
+         Unlock your potencial careers to give a shape to your future by signing up with Global Techify- Learn and Get Mentorship with Our Top Higher Comapies Mentors and start your 
+         career journey .
+         </p>
 
 
-    <div className=' flex  mt-2 gap-2  md:gap-4'>
-    <button className="flex px-2 md:px-4 rounded-md items-center  text-[#7b67df] border-[1px] border-solid border-[#7b67df] bg-white font-bold font-Verdana ">
-      Get Started  <IoArrowForwardCircleOutline className='text-[28px] md:[40px] text-[#7862e4] ' />
+ 
 
-    </button>
-     <button className=' text-lg xl:text-xl font-bold text-white rounded-full bg-[#7862e4] px-2 md:px-4 py-1 md:py-3 ' >
-     Enroll now</button>
-     </div>
+           </div>
 
-    </div>
+           <div  className=' flex  mt-2 gap-2  gap-x-6'>
+         <button className='font-poppins text-lg xl:text-2xl  text-white  rounded-3xl bg-[#7862e4] px-2 md:px-4 border
+         hover:border-[#7862e4] hover:bg-white  hover:text-[#7862e4]
+         py-1 md:py-2 ' onClick={()=> openDialog()} >
+         Enroll now
+         </button>
+         <LoginDialog open={open} setOpen={setOpen} />
 
-   </motion.div>
 
-  
-    </div>
-    
-  {/* Right Home page */}
-  {/* <div>
-  <div  className='bg-white flex  border-b-2 shadow-lg  font-poppins dark:text-black  rounded-md '>
-     
-     <div 
-    
-      className='border-[#6c6d6e]  border-r-[1px]  border-solid flex flex-col justify-end items-center  ' >
-      <div><TbFileCertificate className=' text-[45px] md:text-[60px] text-[#7d68e9]' />  </div>
-     <p className='text-sm md:text-lg font-bold'>Certificate</p>
-     <p className='text-[12px] md:text-[15px]'>Verified Certificates</p>
-   </div>
+         <Link to='courses' activeClass='active' smooth={true} spy={true} >
+        
+          <button className="flex px-2 md:px-4 py-1 md:py-2 rounded-md items-center  font-poppins text-lg lg:text-2xl
+           dark:bg-neutral-900 dark:border-neutral-400 dark:text-white border-[1px] border-solid border-[#7b67df]
+            hover:bg-[#7b67df]  hover:text-white text-[#7b67df]">
+       Explore Here <FaArrowRight />
+      </button>
+      </Link>
 
-<div className='md:border-[#6c6d6e]  md:border-r-[1px]  md:border-solid flex flex-col justify-center items-center '>
-<div className='flex'  >
-<PiVideoDuotone className='text-[50px] md:text-[60px] text-[#7d68e9]' />
- </div>
-<p className='text-sm md:text-lg font-bold'> Daily Live</p>
-<p className='text-[12px] md:text-[15px]'>Intracvtive Classes</p>
- </div>
-
-<div className='border-[#6c6d6e]  border-r-[1px] border-solid flex flex-col justify-center items-center' >
-<div><VscCommentDiscussion className='text-[48px] md:text-[60px] text-[#7d68e9]' />
-</div>
-<p className='text-sm md:text-lg font-bold'> 24 X 7</p>
-<p className='text-[12px] md:text-[15px]'>Doubt Solutions</p>
-</div>
-
-<div className=' flex flex-col justify-center items-center ' >
-<div><FaRegFilePdf className='text-[48px] md:text-[60px] text-[#7d68e9]' />
-</div>
-<p className='text-sm md:text-lg font-bold'> 100 +</p>
-<p className='text-[12px] md:text-[15px]'>Notes & Papers</p>
-</div>
-
-    </div>
-  </div> */}
-
-  {/* <motion.div 
-   variants={fadeIn('up',0.5)}
-   initial='hidden'
-   whileInView={'show'}
-   viewport={{once: false, amount: 0.5}}
-    className='hidden md:flex gap-2 font-poppins lg:justify-center lg:items-center relative'>
-
-      <div className='hidden lg:flex lg:flex-col justify-center items-center text-[#5636f5] dark:text-white absolute bg-white shadow-[#e6d0f1] shadow-lg p-2 rounded-l-md rounded-br-md border-b-2 top-2 xl:top-6 left-0 xl:left-10 '> 
-      <p className='text-[20px] font-semibold '>Online Courses </p>
-      <div className='flex gap-x-1 xl:gap-x-3'>
-      <p className='   text-sm  ' >
-       30+ teacher
-      </p>
-      <div className='  text-sm  ' >
-       300+ videos
-      </div>
-     
+ 
       </div>
 
-      </div>
 
-       <div className='hidden lg:flex lg:flex-col justify-center items-center text-[#5636f5] dark:text-white absolute bg-white shadow-[#e6d0f1] shadow-lg bottom-6  left-20 xl:left-36  p-2  rounded-l-md rounded-br-md border-b-2 '> 
-      <p className='text-xl font-semibold '>Events </p> 
-      <p className='  text-md  ' >
-       6+ Events
-      </p>
-       </div> 
+      
+       </div>
 
-       <div className=' border-4 border-solid border-white rounded-md '>
-    <img src={Learn} className='h-72 w-full rounded-md' />
-    </div>
 
-      <div className='hidden lg:flex lg:flex-col justify-center items-center gap-2 text-[#5636f5] dark:text-white absolute bg-white shadow-[#e6d0f1] shadow-lg right-10 xl:right-24   p-2 rounded-r-md rounded-bl-md border-b-2  '> 
-      <p className='text-xl  font-semibold '>Mentorship </p>    
+
      
-     <p className=' text-sm ' >
-       Carrier Guidance
-      </p>
-    </div> 
 
-  
-    
-   </motion.div> */}
+   
 
 
-    </div>
+         {/* small screen view */}
 
 
-    
-  {/* small screen view */}
-
-
-   <div className="w-full  md:hidden mt-3 ">
+        <div className="w-full  md:hidden  ">
      <Carousel
      responsive={responsive}
      swipeable={false}
@@ -230,16 +178,63 @@ function Landing() {
      </Carousel>
 
     
-   </div>
+         </div>
+
+     </div>
+
+      
+      <div className='bg-[#F4F3FF] dark:bg-neutral-800 p-4  md:p-8 pt-5 lg:p-16 flex flex-col gap-y-10'>
+        <p className='text-center font-poppins text-2xl md:text-3xl text-[#7862e4]'>Why Global Techify ?</p>
+
+       <div  className='grid grid-cols-2  lg:grid-cols-4 gap-x-1 md:gap-x-6 gap-y-1 md:gap-y-6  dark:text-white dark:border-neutral-500  justify-center font-poppins'>
+         
+        <div className='flex flex-col justify-center items-center font-poppins gap-y-3 p-1 md:p-3 hover:scale-105' >
+          <div className='p-2 bg-[#7862e4] rounded-full'>
+          < PiVideoDuotone  className='text-white text-[50px] md:text-[70px]' />
+          </div>
+          <div>
+          <p className='font-poppins text-md md:text-xl text-center'>Course of Top Instructor</p>
+          <p className='text-[10px] md:text-[15px]  text-center'>Find Online courses from the Best Mentors. </p>
+          </div>
+        </div>
+
+        <div className='p-1 md:p-3 flex flex-col justify-center items-center font-poppins gap-y-3 hover:scale-105'>
+          <div className='p-2 bg-[#7862e4] rounded-full'>
+          <SiCodementor className='text-white text-[50px] md:text-[70px]' />
+          </div>
+          <div>
+          <p className='font-poppins text-md md:text-xl text-center'>Mentorship Guide</p>
+          <p className='text-[10px] md:text-[15px]  text-center'> Learn To crack the top interviews , Placements.</p>
+          </div>
+        </div>
+
+        <div className='p-1 md:p-3 flex flex-col justify-center items-center font-poppins gap-y-3 hover:scale-105'>
+        <div className='p-2 bg-[#7862e4] rounded-full'>
+          <TbFileCertificate className='text-white text-[50px] md:text-[70px]' />
+          </div>
+          <div>
+          <p className='font-poppins text-md md:text-xl text-center'>Earn Certifications</p>
+          <p className='text-[10px] md:text-[15px]  text-center'>Earn Certifications and Recognition.</p>
+        </div></div>
+
+        <div className='p-1 md:p-3 flex flex-col justify-center items-center font-poppins gap-y-3 hover:scale-105'>
+
+        <div className='p-2 bg-[#7862e4] rounded-full'>
+          <MdEmojiEvents className='text-white text-[50px] md:text-[70px]' />
+          </div>
+          <div>
+          <p className='font-poppins text-md md:text-xl  text-center'>Live Events</p>
+          <p className='text-[10px] md:text-[15px]  text-center'>Get Chance To join the live events on upcoming tecnology.</p>
+        </div>
+        </div>
+
+       </div>
+       </div>
+     
 
 
-       {/* Video lecture Icons */}
 
-    
-{/* </div> */}
-   
-    
-
+     
   </section>
   );
   

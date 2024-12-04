@@ -3,7 +3,6 @@ import React from 'react';
 import Logo from '../../assets/Header/logo.svg'
 import {  Box,Drawer ,List, ListItem} from '@mui/material';
 import Navbar from './NavBar';
-import Allcourses from './CouseFilter/CoursesFilter';
 
 import { FaChevronLeft } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
@@ -14,11 +13,11 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { HiSun } from "react-icons/hi";
 
 import { FaLinkedin } from "react-icons/fa";
-import { FaAngleDown } from "react-icons/fa";
 import {Link} from 'react-router-dom';
 import Profile from './Profile';
 import { DataContext } from '../../Context/DataProvider';
 import LoginDialog from '../Login/LoginDialog';
+import { MdShoppingCart } from "react-icons/md";
 
 
 
@@ -72,7 +71,7 @@ const openDialog = () => {
 
 
   return (
-    <header className="fixed z-50  overflow-hidden flex p-2 w-full leading-none border-b dark:bg-black bg-zinc-100 border-zinc-300 
+    <header className="fixed top-0 z-50  overflow-hidden flex p-2 w-full leading-none border-b dark:bg-black bg-zinc-100 border-zinc-300 
     font-[number:var(--sds-typography-body-font-weight-regular)] text-[length:var(--sds-typography-body-size-medium)] ">
    
     {/* Header */}
@@ -85,7 +84,7 @@ const openDialog = () => {
         <div className='border-solid border-2 px-1'>
         <IoIosMenu className='text-[#563AE0] text-2xl md:text-3xl' onClick={handleOpen} />
         </div>
-        </div>
+     </div>
 
         {/* Drawer */}
         
@@ -101,24 +100,36 @@ const openDialog = () => {
           </ListItem>
           <hr></hr>
 
-         <ListItem>
+         {/* <ListItem>
           
-        <button className=' flex font-bold text-xl   hover:none '> All Courses
+        {/* <button className=' flex font-bold text-xl   hover:none '> All Courses
            <FaAngleDown className=' mt-2 -rotate-90 text-xl text-[#563AE0]' />
-        </button>
-         </ListItem>
+        </button> 
+         </ListItem> */}
 
       <ListItem className='flex flex-col mx-2'>
-        <Link to='/allcourses' className="gap-4 p-2 self-stretch  rounded-lg"> Courses
-        </Link>
-        
-        <Link to='/mentor' className='gap-4 p-2 self-stretch  rounded-lg'> Mentor
+        <div className='hover:border-b-2  h-[30px] border-[#7862e4]  flex '>
+          <Link to='/' >Home
           </Link>
-          
-          <Link to='/mentor' className='gap-4 p-2 self-stretch  rounded-lg'> My Courses
+          </div>
+         <div className='hover:border-b-2  h-[30px] border-[#7862e4]  flex '>
+          <Link to='/allcourses' >Courses
           </Link>
-          <Link to='/events' className='gap-4 p-2 self-stretch  rounded-lg'> Favourites
+          </div>
+          <div className='hover:border-b-2  h-[30px] border-[#7862e4]  flex '>
+          <Link to='/allmentor'> Mentorship
           </Link>
+          </div>
+          <div className='hover:border-b-2  h-[30px] border-[#7862e4]  flex '>
+          <Link to='/allevents'> Events
+          </Link>
+          </div>
+         
+          <div className='hover:border-b-2  h-[30px] border-[#7862e4] flex '>
+          <Link to='/cart'> My Courses
+          </Link>
+          </div>
+         
        
       </ListItem>
         
@@ -131,24 +142,24 @@ const openDialog = () => {
             <div 
        className='text-[25px]  lg:mx-0 flex gap-x-4 lg:gap-x-10'>    
        <div className='bg-icon'>
-        <a href="https://www.linkedin.com/in/preeti-singh-764190258/">
+        <a href="">
         <FaYoutube className='text-black dark:text-black' />
         </a>
          <span></span>
         </div>    
         <div className='bg-icon'>
-        <a href="https://www.linkedin.com/in/preeti-singh-764190258/">
+        <a href="">
         <FaLinkedin className='text-black dark:text-black' />
         </a>
          <span></span>
         </div>
         <div className='bg-icon'>
-        <a href="https://t.me/+917905845454">
+        <a href="">
         <FaTelegramPlane  className='text-black dark:text-black ' />
         </a>
          <span></span>
         </div><div className='bg-icon'>
-        <a href="https://x.com/singh_preeti7?t=RV2Of7sbPm1-X0RiQBqipw&s=03">
+        <a href="">
         <FaTwitter className='text-black dark:text-black ' />
         </a>
          <span></span>
@@ -162,7 +173,8 @@ const openDialog = () => {
         <Box className='w-full '>
           <List>
           <ListItem className='m-2'>
-          <button className='flex m-2 px-4 h-[40px] rounded-3xl items-center bg-[#7862e4]  text-[black] font-serif '  onClick={()=> openDialog()}>Sign Up/Login</button>    
+          <button className='flex m-2 px-4 h-[40px] rounded-3xl items-center bg-[#9789dd]  text-white font-serif ' 
+           onClick={()=> openDialog()}>Sign Up/Login</button>    
 
           <LoginDialog open={open} setOpen={setOpen} />
 
@@ -170,30 +182,44 @@ const openDialog = () => {
           </ListItem>
           <hr></hr>
 
-         <ListItem>
+         {/* <ListItem>
           
         <button className=' flex font-bold text-xl   hover:none '> All Courses
            <FaAngleDown className=' mt-2 -rotate-90 text-xl text-[#563AE0]' />
         </button>
-         </ListItem>
+         </ListItem> */}
 
-      <ListItem className='flex flex-col mx-2'>
-        <Link to='/allcourses' className="gap-4 p-2 self-stretch  rounded-lg"> Courses
-        </Link>
+      <ListItem className='flex flex-col mx-2 text-[#7862e4] text-lg dark:text-[#7862e4]   gap-y-3'>
         
-        <Link to='/allservices' className="gap-2 p-2 self-stretch  rounded-lg"> Services
-        </Link>
-        
-        <Link to='/events' className="gap-2 p-2 self-stretch  rounded-lg"> Events
-        </Link>
-       
-        <Link to='/mentor' className="gap-2 p-2 self-stretch  rounded-lg"> Mentorship
-        </Link>
-       
-        <Link to='/about ' className="gap-2 p-2 self-stretch  rounded-lg"> About
-        </Link>
-        <Link to='/contact ' className="gap-2 p-2 self-stretch  rounded-lg"> Contact
-        </Link>
+        <div className='hover:border-b-2  h-[30px] border-[#7862e4]  flex '>
+         <Link to='/'> Home
+         </Link>
+        </div>
+         
+        <div className='hover:border-b-2  h-[30px] border-[#7862e4]  flex '>
+         <Link to='/allcourses'> Courses
+         </Link>
+        </div>
+         
+         <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+         <Link to='/allevents'> Events
+         </Link>
+         </div>
+
+         <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+         <Link to='/allmentor' > Mentorship
+         </Link>
+         </div>
+
+         <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+         <Link to='/allservices' > Services
+         </Link>
+         </div>   
+         <div className='hover:border-b-2  h-[30px] border-[#7862e4] items-center flex '>
+         <Link to='/cart' >  <MdShoppingCart className='text-[30px]' />
+         </Link>
+         </div>   
+
        
       </ListItem>
         
@@ -206,24 +232,24 @@ const openDialog = () => {
             <div 
        className='text-[25px]  lg:mx-0 flex gap-x-4 lg:gap-x-10'>    
        <div className='bg-icon'>
-        <a href="https://www.linkedin.com/in/preeti-singh-764190258/">
+        <a href="">
         <FaYoutube className='text-black dark:text-black' />
         </a>
          <span></span>
         </div>    
         <div className='bg-icon'>
-        <a href="https://www.linkedin.com/in/preeti-singh-764190258/">
+        <a href="">
         <FaLinkedin className='text-black dark:text-black' />
         </a>
          <span></span>
         </div>
         <div className='bg-icon'>
-        <a href="https://t.me/+917905845454">
+        <a href="">
         <FaTelegramPlane  className='text-black dark:text-black ' />
         </a>
          <span></span>
         </div><div className='bg-icon'>
-        <a href="https://x.com/singh_preeti7?t=RV2Of7sbPm1-X0RiQBqipw&s=03">
+        <a href="">
         <FaTwitter className='text-black dark:text-black ' />
         </a>
          <span></span>
@@ -238,15 +264,15 @@ const openDialog = () => {
 
        {/* Logo and Courses */}
        <Link to='/'>
-      <div className=' flex items-center m-1 justify-center w-[200px] md:w-[200px] lg:w-[200px] xl:w-[280px] md:border-r-2 border-indigo-300'>
-       <img src={Logo} className='w-[40px] lg:w-[40px] xl:w-[60px]  '  />
+      <div className=' flex items-center m-1 justify-center gap-x-4 px-2 '>
+       <img src={Logo} className='w-[40px] lg:w-[40px] xl:w-[50px]  '  />
        <p className="w-[250px] text-xl lg:text-[22px] xl:text-3xl   font-bold text-[#7862e4] ">Global Techify</p>
        </div>
        </Link>
      
 
        {/* Courses Filter Box */}
-       <Allcourses />
+       {/* <Allcourses /> */}
        
      </div>
 

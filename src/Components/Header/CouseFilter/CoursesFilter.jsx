@@ -42,9 +42,9 @@ function Allcourses () {
     return(
         <div className='hidden md:flex  '>
 
-        <button onClick={handleClick}  className=" border border-gray-400 p-[10px] 
+        <button onClick={handleClick}  className=" border border-gray-400 p-[8px] 
              rounded-lg flex items-center gap-[5px] justify-center" >
-                <span class="text-[#535353] font-semibold text-base">All Courses</span><span>
+                <span class="text-[#535353] font-bold text-xl">All Courses</span><span>
                 {icon}
                 </span>
          </button>
