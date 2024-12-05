@@ -49,15 +49,15 @@
               
             
                 return (
-                    <section id='cart' className='py-16 dark:bg-black bg-[#FFFFFF] overflow-hidden  ' >
+                    <section id='cart' className='py-16 dark:bg-black overflow-hidden  ' >
             
             
                     {
                         cartItems.length ?
                          <Container container>
                             <LeftComponent item lg={9} md={9} sm={12} xs={12}>
-                             <Header>
-                            <Typography>
+                             <Header className='dark:bg-black'>
+                            <Typography className=' dark:text-white'>
                                 My Courses ({cartItems.length})
                             </Typography>
                             </Header>
@@ -66,8 +66,8 @@
                             <CartItem item={item} />
                             ))
                         }
-                        <ButtonWrapper>
-                            <StyleButton >Buy Now</StyleButton>
+                        <ButtonWrapper className='dark:bg-black'>
+                            <StyleButton    >Buy Now</StyleButton>
                         </ButtonWrapper>
                             </LeftComponent>
                             <Grid item lg={3} md={3} sm={12} xs={12}>

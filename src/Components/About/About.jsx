@@ -15,7 +15,7 @@ function About() {
   }
     return (
     <section id='about'  style={{backgroundImage:`url("../../src/assets/Home/background.png")`}}
-    className='bg-no-repeat bg-cover h-full px-4 py-6 md:px-10 md:py-16 lg:px-4  dark:bg-black overflow-hidden  dark:text-white' >
+    className='bg-no-repeat bg-cover h-full px-4 py-6 md:px-10 mt-6 md:py-16 lg:px-4  dark:bg-black overflow-hidden  dark:text-white' >
 
       <div className='grid grid-cols-1 lg:gap-y-4   font-poppins'>
       

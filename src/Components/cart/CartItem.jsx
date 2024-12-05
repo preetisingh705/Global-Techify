@@ -26,7 +26,7 @@ const CartItem = ({item}) => {
 
     return (
 
-            <div className="flex rounded-xl gap-y-4  border-2  justify-center items-center">
+            <div className="flex rounded-xl gap-y-4 dark:text-white  border-2  justify-center items-center">
             <div>
                 <img src={item.url} alt="product" className="h-40" />
             </div>
@@ -38,7 +38,7 @@ const CartItem = ({item}) => {
                   <Box component='span' style={{color: '#878787'}}><strike>₹{item.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
                  <Box component='span' style={{color: '#388E3C'}}>{item.price.discount} off</Box>
                 </Typography>
-            <Remove onClick={() => removeItemFromCart(item.id)}>Remove</Remove>
+            <Remove onClick={() => removeItemFromCart(item.id)} className='dark:text-white'>Remove</Remove>
             </div>
             </div>
         

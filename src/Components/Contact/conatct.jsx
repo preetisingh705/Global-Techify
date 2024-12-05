@@ -13,7 +13,7 @@ import { FaGithubSquare } from "react-icons/fa";
 
 function Contact() {
     return (
-    <section id='contact' className=' px-4   dark:bg-black overflow-hidden py-10' >
+    <section id='contact' className=' px-4 mt-6  dark:bg-black overflow-hidden py-10' >
 
         <div  className='mt-4  flex justify-center items-center'>
         <p className="text-[25px] md:text-[40px] text-[#7862e4]  font-semibold leading-none">Contact Us</p>
@@ -31,26 +31,10 @@ function Contact() {
         </div>
 
         <div className='flex flex-col gap-y-6'>
-          
-        <div className=' p-4 bg-white dark:bg-neutral-900 border dark:border-neutral-400 dark:text-white 
-         w-full flex flex-col   gap-4 rounded-md shadow-lg'>
-          <p className='text-2xl font-poppins text-[#7862e4]'>Subscribe Now</p>
-
-          <form className='flex flex-col  gap-y-2 font-poppins '>
-            <div className='flex flex-col gap-2 w-full'> 
-            <input placeholder='Enter Your Email' className='p-2 rounded-md border-[1px] border-solid
-             dark:bg-neutral-900 dark:border-neutral-400 placeholder:black dark:placeholder-white'/>
-            </div>
-            <div className='flex justify-center items-center'>
-            <button className='py-2  px-6 rounded-lg bg-[#9383e0] text-xl text-white hover:text-[#9383e0] 
-            hover:bg-white hover:border-[#9383e0] hover:border'>Subscribe</button>
-            </div>
-          </form>
-          
-         </div>
+      
          
 
-           <div className='grid grid-cols-1 md:grid-cols-3 p-2 bg-[#F4F3FF] dark:bg-neutral-800 rounded-md shadow-md    justify-center  '>
+           <div className='grid grid-cols-1 md:grid-cols-3 p-2 gap-y-6 bg-[#F4F3FF] dark:bg-neutral-800 rounded-md shadow-md    justify-center  '>
            <div className='  flex flex-col gap-y-1 hover:scale-105  '>
            <p className='text-black text-xl font-poppins text-center dark:text-white'>Visit Us</p>
            <div className='flex flex-col  justify-center items-center '>
@@ -95,6 +79,22 @@ function Contact() {
            </div>
 
            </div>
+
+               
+        <div className=' p-4 bg-white dark:bg-neutral-900 border dark:border-neutral-400 dark:text-white 
+         w-full flex flex-col   gap-y-6 rounded-md shadow-lg'>
+          <p className='text-2xl font-poppins text-[#7862e4] text-center'>Other Method To Connect Us.</p>
+
+          <div className='flex gap-x-4 justify-center items-center'>
+            <FaLinkedin  className='text-4xl text-[#7862e4] hover:text-black'/>
+            <FaInstagramSquare  className='text-4xl text-[#7862e4] hover:text-black' />
+            <FaFacebookSquare  className='text-4xl text-[#7862e4] hover:text-black' />
+            <BsThreadsFill  className='text-4xl text-[#7862e4] hover:text-black' />
+            <FaGithubSquare  className='text-4xl text-[#7862e4] hover:text-black' />
+          </div>
+        
+          
+         </div>
            </div> 
 
           
