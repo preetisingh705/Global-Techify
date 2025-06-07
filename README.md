@@ -61,14 +61,15 @@ npm run dev
 # 5. Run frontend
 cd ../frontend
 npm start
+```
 
+# 📸 Screenshots
 
+# 📚 Course Catalog
 
-## 📚 Course Catalog
+# 🧾 Course Purchase
 
-## 🧾 Course Purchase
-
-## 📁 Folder Structure
+# 📁 Folder Structure
 Copy
 Edit
 e-learning-platform/
