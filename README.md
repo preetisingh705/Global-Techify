@@ -70,6 +70,7 @@ npm start
 # 🧾 Course Purchase
 
 # 📁 Folder Structure
+
 Copy
 Edit
 e-learning-platform/
@@ -81,6 +82,7 @@ e-learning-platform/
 │   ├── components/
 │   └── pages/
 └── README.md
+
 📽️ Demo Video
 🎥 Watch Demo
 (Include a short 2–3 min video showing login → browse → purchase → access course)
