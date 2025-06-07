@@ -61,3 +61,57 @@ npm run dev
 # 5. Run frontend
 cd ../frontend
 npm start
+
+
+
+# 📸 Screenshots
+# 📚 Course Catalog
+
+# 🧾 Course Purchase
+
+# 📁 Folder Structure
+Copy
+Edit
+e-learning-platform/
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   └── controllers/
+├── frontend/
+│   ├── components/
+│   └── pages/
+└── README.md
+📽️ Demo Video
+🎥 Watch Demo
+(Include a short 2–3 min video showing login → browse → purchase → access course)
+
+# 👨‍💼 Author
+Your Name
+
+LinkedIn: your-linkedin
+
+GitHub: @yourusername
+
+🌐 Deployment (Optional)
+Frontend: [Netlify/Vercel link]
+Backend: [Render/Heroku link]
+
+# 📄 License
+This project is licensed under the MIT License.
+
+yaml
+Copy
+Edit
+
+---
+
+Let me know if you want the README tailored to **only frontend**, **only backend**, or with actual links and screenshots!
+
+
+
+
+
+
+
+
+
