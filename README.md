@@ -64,12 +64,11 @@ npm start
 
 
 
-# 📸 Screenshots
-# 📚 Course Catalog
+## 📚 Course Catalog
 
-# 🧾 Course Purchase
+## 🧾 Course Purchase
 
-# 📁 Folder Structure
+## 📁 Folder Structure
 Copy
 Edit
 e-learning-platform/
@@ -105,7 +104,7 @@ Edit
 
 ---
 
-Let me know if you want the README tailored to **only frontend**, **only backend**, or with actual links and screenshots!
+
 
 
 
